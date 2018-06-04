@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun May 15 21:05:52 2016
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : bmul32
+Top-level Entity Name : bmul32
+Family : Cyclone II
+Device : EP2C70F896C6
+Timing Models : Final
+Total logic elements : 2,280 / 68,416 ( 3 % )
+    Total combinational functions : 2,280 / 68,416 ( 3 % )
+    Dedicated logic registers : 0 / 68,416 ( 0 % )
+Total registers : 0
+Total pins : 128 / 622 ( 21 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,152,000 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,878 @@
+Analysis & Synthesis report for bmul32
+Sun May 15 21:05:38 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "badd32:a0|fadd:a2"
+ 11. Port Connectivity Checks: "badd32:a0"
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun May 15 21:05:37 2016           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; bmul32                                          ;
+; Top-level Entity Name              ; bmul32                                          ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 2,280                                           ;
+;     Total combinational functions  ; 2,280                                           ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 128                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C70F896C6       ;                    ;
+; Top-level entity name                                                      ; bmul32             ; bmul32             ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                                  ; Library ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; bmul32.vhd                       ; yes             ; User VHDL File        ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Multiplicador Paralelo/bmul32.vhd ;         ;
+; badd32.vhd                       ; yes             ; Auto-Found VHDL File  ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Multiplicador Paralelo/badd32.vhd ;         ;
+; add32.vhd                        ; yes             ; Auto-Found VHDL File  ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Multiplicador Paralelo/add32.vhd  ;         ;
+; fadd.vhd                         ; yes             ; Auto-Found VHDL File  ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Multiplicador Paralelo/fadd.vhd   ;         ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 2,280 ;
+;                                             ;       ;
+; Total combinational functions               ; 2280  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1850  ;
+;     -- 3 input functions                    ; 209   ;
+;     -- <=2 input functions                  ; 221   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 2280  ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 128   ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; a[1]  ;
+; Maximum fan-out                             ; 100   ;
+; Total fan-out                               ; 8533  ;
+; Average fan-out                             ; 3.54  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                 ; Library Name ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+--------------+
+; |bmul32                            ; 2280 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 128  ; 0            ; |bmul32                                             ; work         ;
+;    |badd32:a0|                     ; 65 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0                                   ; work         ;
+;       |add32:a1|                   ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a0|fadd:a2                           ; work         ;
+;    |badd32:a10|                    ; 131 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10                                  ; work         ;
+;       |add32:a1|                   ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1                         ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:Adder0             ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:Adder31            ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:10:Adders ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:11:Adders ; work         ;
+;          |fadd:\Generar:12:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:12:Adders ; work         ;
+;          |fadd:\Generar:13:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:13:Adders ; work         ;
+;          |fadd:\Generar:14:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:14:Adders ; work         ;
+;          |fadd:\Generar:15:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:15:Adders ; work         ;
+;          |fadd:\Generar:16:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:16:Adders ; work         ;
+;          |fadd:\Generar:17:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:17:Adders ; work         ;
+;          |fadd:\Generar:18:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:18:Adders ; work         ;
+;          |fadd:\Generar:19:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:19:Adders ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:1:Adders  ; work         ;
+;          |fadd:\Generar:20:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:20:Adders ; work         ;
+;          |fadd:\Generar:21:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:21:Adders ; work         ;
+;          |fadd:\Generar:22:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:22:Adders ; work         ;
+;          |fadd:\Generar:23:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:23:Adders ; work         ;
+;          |fadd:\Generar:24:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:24:Adders ; work         ;
+;          |fadd:\Generar:25:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:25:Adders ; work         ;
+;          |fadd:\Generar:26:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:26:Adders ; work         ;
+;          |fadd:\Generar:27:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:27:Adders ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:28:Adders ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:29:Adders ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:2:Adders  ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:30:Adders ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:3:Adders  ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:4:Adders  ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:5:Adders  ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:6:Adders  ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:7:Adders  ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:8:Adders  ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|add32:a1|fadd:\Generar:9:Adders  ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a10|fadd:a2                          ; work         ;
+;    |badd32:a11|                    ; 147 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11                                  ; work         ;
+;       |add32:a1|                   ; 80 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1                         ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:Adder0             ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:Adder31            ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:10:Adders ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:11:Adders ; work         ;
+;          |fadd:\Generar:12:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:12:Adders ; work         ;
+;          |fadd:\Generar:13:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:13:Adders ; work         ;
+;          |fadd:\Generar:14:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:14:Adders ; work         ;
+;          |fadd:\Generar:15:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:15:Adders ; work         ;
+;          |fadd:\Generar:16:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:16:Adders ; work         ;
+;          |fadd:\Generar:17:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:17:Adders ; work         ;
+;          |fadd:\Generar:18:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:18:Adders ; work         ;
+;          |fadd:\Generar:19:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:19:Adders ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:1:Adders  ; work         ;
+;          |fadd:\Generar:20:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:20:Adders ; work         ;
+;          |fadd:\Generar:21:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:21:Adders ; work         ;
+;          |fadd:\Generar:22:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:22:Adders ; work         ;
+;          |fadd:\Generar:23:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:23:Adders ; work         ;
+;          |fadd:\Generar:24:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:24:Adders ; work         ;
+;          |fadd:\Generar:25:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:25:Adders ; work         ;
+;          |fadd:\Generar:26:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:26:Adders ; work         ;
+;          |fadd:\Generar:27:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:27:Adders ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:28:Adders ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:29:Adders ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:2:Adders  ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:30:Adders ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:3:Adders  ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:4:Adders  ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:5:Adders  ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:6:Adders  ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:7:Adders  ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:8:Adders  ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|add32:a1|fadd:\Generar:9:Adders  ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a11|fadd:a2                          ; work         ;
+;    |badd32:a12|                    ; 181 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12                                  ; work         ;
+;       |add32:a1|                   ; 114 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1                         ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:Adder0             ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:Adder31            ; work         ;
+;          |fadd:\Generar:10:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:10:Adders ; work         ;
+;          |fadd:\Generar:11:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:11:Adders ; work         ;
+;          |fadd:\Generar:12:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:12:Adders ; work         ;
+;          |fadd:\Generar:13:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:13:Adders ; work         ;
+;          |fadd:\Generar:14:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:14:Adders ; work         ;
+;          |fadd:\Generar:15:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:15:Adders ; work         ;
+;          |fadd:\Generar:16:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:16:Adders ; work         ;
+;          |fadd:\Generar:17:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:17:Adders ; work         ;
+;          |fadd:\Generar:18:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:18:Adders ; work         ;
+;          |fadd:\Generar:19:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:19:Adders ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:1:Adders  ; work         ;
+;          |fadd:\Generar:20:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:20:Adders ; work         ;
+;          |fadd:\Generar:21:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:21:Adders ; work         ;
+;          |fadd:\Generar:22:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:22:Adders ; work         ;
+;          |fadd:\Generar:23:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:23:Adders ; work         ;
+;          |fadd:\Generar:24:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:24:Adders ; work         ;
+;          |fadd:\Generar:25:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:25:Adders ; work         ;
+;          |fadd:\Generar:26:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:26:Adders ; work         ;
+;          |fadd:\Generar:27:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:27:Adders ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:28:Adders ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:29:Adders ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:2:Adders  ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:30:Adders ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:3:Adders  ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:4:Adders  ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:5:Adders  ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:6:Adders  ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:7:Adders  ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:8:Adders  ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|add32:a1|fadd:\Generar:9:Adders  ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a12|fadd:a2                          ; work         ;
+;    |badd32:a13|                    ; 131 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13                                  ; work         ;
+;       |add32:a1|                   ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1                         ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:Adder0             ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:Adder31            ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:10:Adders ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:11:Adders ; work         ;
+;          |fadd:\Generar:12:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:12:Adders ; work         ;
+;          |fadd:\Generar:13:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:13:Adders ; work         ;
+;          |fadd:\Generar:14:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:14:Adders ; work         ;
+;          |fadd:\Generar:15:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:15:Adders ; work         ;
+;          |fadd:\Generar:16:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:16:Adders ; work         ;
+;          |fadd:\Generar:17:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:17:Adders ; work         ;
+;          |fadd:\Generar:18:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:18:Adders ; work         ;
+;          |fadd:\Generar:19:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:19:Adders ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:1:Adders  ; work         ;
+;          |fadd:\Generar:20:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:20:Adders ; work         ;
+;          |fadd:\Generar:21:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:21:Adders ; work         ;
+;          |fadd:\Generar:22:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:22:Adders ; work         ;
+;          |fadd:\Generar:23:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:23:Adders ; work         ;
+;          |fadd:\Generar:24:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:24:Adders ; work         ;
+;          |fadd:\Generar:25:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:25:Adders ; work         ;
+;          |fadd:\Generar:26:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:26:Adders ; work         ;
+;          |fadd:\Generar:27:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:27:Adders ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:28:Adders ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:29:Adders ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:2:Adders  ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:30:Adders ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:3:Adders  ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:4:Adders  ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:5:Adders  ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:6:Adders  ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:7:Adders  ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:8:Adders  ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|add32:a1|fadd:\Generar:9:Adders  ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a13|fadd:a2                          ; work         ;
+;    |badd32:a14|                    ; 151 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14                                  ; work         ;
+;       |add32:a1|                   ; 84 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1                         ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:Adder0             ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:Adder31            ; work         ;
+;          |fadd:\Generar:10:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:10:Adders ; work         ;
+;          |fadd:\Generar:11:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:11:Adders ; work         ;
+;          |fadd:\Generar:12:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:12:Adders ; work         ;
+;          |fadd:\Generar:13:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:13:Adders ; work         ;
+;          |fadd:\Generar:14:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:14:Adders ; work         ;
+;          |fadd:\Generar:15:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:15:Adders ; work         ;
+;          |fadd:\Generar:16:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:16:Adders ; work         ;
+;          |fadd:\Generar:17:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:17:Adders ; work         ;
+;          |fadd:\Generar:18:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:18:Adders ; work         ;
+;          |fadd:\Generar:19:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:19:Adders ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:1:Adders  ; work         ;
+;          |fadd:\Generar:20:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:20:Adders ; work         ;
+;          |fadd:\Generar:21:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:21:Adders ; work         ;
+;          |fadd:\Generar:22:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:22:Adders ; work         ;
+;          |fadd:\Generar:23:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:23:Adders ; work         ;
+;          |fadd:\Generar:24:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:24:Adders ; work         ;
+;          |fadd:\Generar:25:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:25:Adders ; work         ;
+;          |fadd:\Generar:26:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:26:Adders ; work         ;
+;          |fadd:\Generar:27:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:27:Adders ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:28:Adders ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:29:Adders ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:2:Adders  ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:30:Adders ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:3:Adders  ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:4:Adders  ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:5:Adders  ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:6:Adders  ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:7:Adders  ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:8:Adders  ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|add32:a1|fadd:\Generar:9:Adders  ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a14|fadd:a2                          ; work         ;
+;    |badd32:a15|                    ; 130 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15                                  ; work         ;
+;       |add32:a1|                   ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1                         ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:Adder0             ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:Adder31            ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:10:Adders ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:11:Adders ; work         ;
+;          |fadd:\Generar:12:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:12:Adders ; work         ;
+;          |fadd:\Generar:13:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:13:Adders ; work         ;
+;          |fadd:\Generar:14:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:14:Adders ; work         ;
+;          |fadd:\Generar:15:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:15:Adders ; work         ;
+;          |fadd:\Generar:16:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:16:Adders ; work         ;
+;          |fadd:\Generar:17:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:17:Adders ; work         ;
+;          |fadd:\Generar:18:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:18:Adders ; work         ;
+;          |fadd:\Generar:19:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:19:Adders ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:1:Adders  ; work         ;
+;          |fadd:\Generar:20:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:20:Adders ; work         ;
+;          |fadd:\Generar:21:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:21:Adders ; work         ;
+;          |fadd:\Generar:22:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:22:Adders ; work         ;
+;          |fadd:\Generar:23:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:23:Adders ; work         ;
+;          |fadd:\Generar:24:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:24:Adders ; work         ;
+;          |fadd:\Generar:25:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:25:Adders ; work         ;
+;          |fadd:\Generar:26:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:26:Adders ; work         ;
+;          |fadd:\Generar:27:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:27:Adders ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:28:Adders ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:29:Adders ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:2:Adders  ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:30:Adders ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:3:Adders  ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:4:Adders  ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:5:Adders  ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:6:Adders  ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:7:Adders  ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:8:Adders  ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|add32:a1|fadd:\Generar:9:Adders  ; work         ;
+;       |fadd:a2|                    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a15|fadd:a2                          ; work         ;
+;    |badd32:a1|                     ; 131 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1                                   ; work         ;
+;       |add32:a1|                   ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a1|fadd:a2                           ; work         ;
+;    |badd32:a2|                     ; 131 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2                                   ; work         ;
+;       |add32:a1|                   ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a2|fadd:a2                           ; work         ;
+;    |badd32:a3|                     ; 182 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3                                   ; work         ;
+;       |add32:a1|                   ; 115 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a3|fadd:a2                           ; work         ;
+;    |badd32:a4|                     ; 131 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4                                   ; work         ;
+;       |add32:a1|                   ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a4|fadd:a2                           ; work         ;
+;    |badd32:a5|                     ; 135 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5                                   ; work         ;
+;       |add32:a1|                   ; 68 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a5|fadd:a2                           ; work         ;
+;    |badd32:a6|                     ; 181 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6                                   ; work         ;
+;       |add32:a1|                   ; 114 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a6|fadd:a2                           ; work         ;
+;    |badd32:a7|                     ; 131 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7                                   ; work         ;
+;       |add32:a1|                   ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a7|fadd:a2                           ; work         ;
+;    |badd32:a8|                     ; 141 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8                                   ; work         ;
+;       |add32:a1|                   ; 74 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a8|fadd:a2                           ; work         ;
+;    |badd32:a9|                     ; 181 (65)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9                                   ; work         ;
+;       |add32:a1|                   ; 114 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1                          ; work         ;
+;          |fadd:Adder0|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:Adder0              ; work         ;
+;          |fadd:Adder31|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:Adder31             ; work         ;
+;          |fadd:\Generar:10:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:10:Adders  ; work         ;
+;          |fadd:\Generar:11:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:11:Adders  ; work         ;
+;          |fadd:\Generar:12:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:12:Adders  ; work         ;
+;          |fadd:\Generar:13:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:13:Adders  ; work         ;
+;          |fadd:\Generar:14:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:14:Adders  ; work         ;
+;          |fadd:\Generar:15:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:15:Adders  ; work         ;
+;          |fadd:\Generar:16:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:16:Adders  ; work         ;
+;          |fadd:\Generar:17:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:17:Adders  ; work         ;
+;          |fadd:\Generar:18:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:18:Adders  ; work         ;
+;          |fadd:\Generar:19:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:19:Adders  ; work         ;
+;          |fadd:\Generar:1:Adders|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:1:Adders   ; work         ;
+;          |fadd:\Generar:20:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:20:Adders  ; work         ;
+;          |fadd:\Generar:21:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:21:Adders  ; work         ;
+;          |fadd:\Generar:22:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:22:Adders  ; work         ;
+;          |fadd:\Generar:23:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:23:Adders  ; work         ;
+;          |fadd:\Generar:24:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:24:Adders  ; work         ;
+;          |fadd:\Generar:25:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:25:Adders  ; work         ;
+;          |fadd:\Generar:26:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:26:Adders  ; work         ;
+;          |fadd:\Generar:27:Adders| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:27:Adders  ; work         ;
+;          |fadd:\Generar:28:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:28:Adders  ; work         ;
+;          |fadd:\Generar:29:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:29:Adders  ; work         ;
+;          |fadd:\Generar:2:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:2:Adders   ; work         ;
+;          |fadd:\Generar:30:Adders| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:30:Adders  ; work         ;
+;          |fadd:\Generar:3:Adders|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:3:Adders   ; work         ;
+;          |fadd:\Generar:4:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:4:Adders   ; work         ;
+;          |fadd:\Generar:5:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:5:Adders   ; work         ;
+;          |fadd:\Generar:6:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:6:Adders   ; work         ;
+;          |fadd:\Generar:7:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:7:Adders   ; work         ;
+;          |fadd:\Generar:8:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:8:Adders   ; work         ;
+;          |fadd:\Generar:9:Adders|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|add32:a1|fadd:\Generar:9:Adders   ; work         ;
+;       |fadd:a2|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bmul32|badd32:a9|fadd:a2                           ; work         ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |bmul32|badd32:a0|bb[15]   ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 93 LEs               ; 31 LEs                 ; No         ; |bmul32|badd32:a1|bb[15]   ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |bmul32|badd32:a2|bb[6]    ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |bmul32|badd32:a4|bb[10]   ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |bmul32|badd32:a6|bb[12]   ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |bmul32|badd32:a8|bb[20]   ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |bmul32|badd32:a10|bb[14]  ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |bmul32|badd32:a12|bb[31]  ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |bmul32|badd32:a14|bb[28]  ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |bmul32|badd32:a3|bb[29]   ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |bmul32|badd32:a5|bb[1]    ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |bmul32|badd32:a7|bb[2]    ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |bmul32|badd32:a9|bb[7]    ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |bmul32|badd32:a11|bb[10]  ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |bmul32|badd32:a13|bb[15]  ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |bmul32|badd32:a15|bb[9]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "badd32:a0|fadd:a2"                                                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "badd32:a0"    ;
++--------+-------+----------+--------------+
+; Port   ; Type  ; Severity ; Details      ;
++--------+-------+----------+--------------+
+; a[0]   ; Input ; Info     ; Stuck at GND ;
+; sum_in ; Input ; Info     ; Stuck at GND ;
++--------+-------+----------+--------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:09     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun May 15 21:05:24 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bmul32 -c bmul32
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file bmul32.vhd
+    Info (12022): Found design unit 1: bmul32-Behaivorial
+    Info (12023): Found entity 1: bmul32
+Info (12127): Elaborating entity "bmul32" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at bmul32.vhd(13): used explicit default value for signal "zer" because signal was never assigned a value
+Warning (12125): Using design file badd32.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: badd32-Behaivorial
+    Info (12023): Found entity 1: badd32
+Info (12128): Elaborating entity "badd32" for hierarchy "badd32:a0"
+Warning (10036): Verilog HDL or VHDL warning at badd32.vhd(26): object "nc1" assigned a value but never read
+Warning (12125): Using design file add32.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: add32-Behaivorial
+    Info (12023): Found entity 1: add32
+Info (12128): Elaborating entity "add32" for hierarchy "badd32:a0|add32:a1"
+Warning (12125): Using design file fadd.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: fadd-Behaivorial
+    Info (12023): Found entity 1: fadd
+Info (12128): Elaborating entity "fadd" for hierarchy "badd32:a0|add32:a1|fadd:Adder0"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2408 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 64 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 2280 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 507 megabytes
+    Info: Processing ended: Sun May 15 21:05:38 2016
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:13
+
+

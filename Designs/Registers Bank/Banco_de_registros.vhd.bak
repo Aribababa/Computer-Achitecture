@@ -1,0 +1,19 @@
+Library IEEE;
+Use IEEE.std_logic_1164.all;
+
+Entity Banco_de_registros is
+	Port(
+		clk: in std_logic;
+		address_RM, Address_RN, Address_RD: in std_logic(2 downto 0)
+	);
+end entity Banco_de_registros;
+
+Architecture Behaivorial of Banco_de_registros is
+
+	-- Arreglo para banco de 16 registros.
+	-- Cada registro contiene un vector de 32 bits.
+	Type registros is array (0 to 15) of std_logic_vector(31 downto 0);
+	Signal registro: registros:=(others => (others => '0'));
+	
+begin
+end architecture Behaivorial;

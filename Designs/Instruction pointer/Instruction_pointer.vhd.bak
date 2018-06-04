@@ -1,0 +1,34 @@
+Library IEEE;
+Use IEEE.std_logic_1164.all;
+
+Entity Instruction_pointer is
+	port(
+		clk: in std_logic;
+		rst_ip, load_ip, inc_ip, get_ip: in std_logic;
+		cargar: in std_logic_vector(31 downto 0);
+		instruction: out std_logic_vector(31 downto 0)
+	);
+end entity Instruction_pointer:
+
+Architecture Behaivorial of Instruction_pointer is
+	Signal nx_instruccion: std_logic_vector(31 downto 0);
+begin
+	
+	Siguiente_instruccion: Process(clk) is begin
+		if rising_edge(clk) then
+			if get_ip = '1' then
+				instruction <= nx_instruccion;
+			else
+				instruction <= (Others => 'Z');
+		else null;
+		end if;
+	end procedure Siguiente_instruccion;
+	
+	Incrementar: Process(load_ip) is begin
+		if load_ip = '1' then	
+			nx_instruccion <= nx_instruccion + 1;
+		else
+			nx_instruccion <= nx_instruccion;
+		end if;
+	end process Incrementar;
+end architecture Behaivorial;

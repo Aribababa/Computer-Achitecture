@@ -1,0 +1,1429 @@
+TimeQuest Timing Analyzer report for Instruction_pointer
+Fri May 13 10:27:12 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Output Enable Times
+ 19. Minimum Output Enable Times
+ 20. Output Disable Times
+ 21. Minimum Output Disable Times
+ 22. Fast Model Setup Summary
+ 23. Fast Model Hold Summary
+ 24. Fast Model Recovery Summary
+ 25. Fast Model Removal Summary
+ 26. Fast Model Minimum Pulse Width Summary
+ 27. Fast Model Setup: 'clk'
+ 28. Fast Model Hold: 'clk'
+ 29. Fast Model Minimum Pulse Width: 'clk'
+ 30. Setup Times
+ 31. Hold Times
+ 32. Clock to Output Times
+ 33. Minimum Clock to Output Times
+ 34. Output Enable Times
+ 35. Minimum Output Enable Times
+ 36. Output Disable Times
+ 37. Minimum Output Disable Times
+ 38. Multicorner Timing Analysis Summary
+ 39. Setup Times
+ 40. Hold Times
+ 41. Clock to Output Times
+ 42. Minimum Clock to Output Times
+ 43. Setup Transfers
+ 44. Hold Transfers
+ 45. Report TCCS
+ 46. Report RSKM
+ 47. Unconstrained Paths
+ 48. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Instruction_pointer                                               ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C70F896C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 353.48 MHz ; 353.48 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.829 ; -20.941       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.523 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -40.380               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                              ;
++--------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+; -1.829 ; current_ip[0]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.865      ;
+; -1.826 ; current_ip[2]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.862      ;
+; -1.783 ; current_ip[3]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.819      ;
+; -1.731 ; current_ip[0]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.767      ;
+; -1.728 ; current_ip[2]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.764      ;
+; -1.725 ; current_ip[1]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.761      ;
+; -1.723 ; current_ip[4]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.759      ;
+; -1.711 ; current_ip[0]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.747      ;
+; -1.708 ; current_ip[2]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.744      ;
+; -1.690 ; current_ip[0]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.726      ;
+; -1.687 ; current_ip[2]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.723      ;
+; -1.685 ; current_ip[3]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.721      ;
+; -1.665 ; current_ip[3]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.701      ;
+; -1.644 ; current_ip[3]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.680      ;
+; -1.627 ; current_ip[1]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.663      ;
+; -1.625 ; current_ip[4]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.661      ;
+; -1.612 ; current_ip[0]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.648      ;
+; -1.609 ; current_ip[2]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.645      ;
+; -1.607 ; current_ip[1]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.643      ;
+; -1.605 ; current_ip[4]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.641      ;
+; -1.586 ; current_ip[1]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.622      ;
+; -1.584 ; current_ip[4]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.620      ;
+; -1.570 ; current_ip[0]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.606      ;
+; -1.567 ; current_ip[2]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.603      ;
+; -1.566 ; current_ip[3]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.602      ;
+; -1.552 ; current_ip[5]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.588      ;
+; -1.524 ; current_ip[3]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.560      ;
+; -1.520 ; current_ip[0]  ; current_ip[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.556      ;
+; -1.508 ; current_ip[1]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.544      ;
+; -1.506 ; current_ip[4]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.542      ;
+; -1.481 ; current_ip[6]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.517      ;
+; -1.475 ; current_ip[0]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.511      ;
+; -1.472 ; current_ip[2]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.508      ;
+; -1.466 ; current_ip[1]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.502      ;
+; -1.464 ; current_ip[4]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.500      ;
+; -1.454 ; current_ip[5]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.490      ;
+; -1.434 ; current_ip[5]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.470      ;
+; -1.429 ; current_ip[3]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.465      ;
+; -1.414 ; current_ip[0]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.450      ;
+; -1.413 ; current_ip[5]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.449      ;
+; -1.411 ; current_ip[2]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.447      ;
+; -1.408 ; current_ip[7]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.444      ;
+; -1.383 ; current_ip[6]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.419      ;
+; -1.379 ; current_ip[8]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.415      ;
+; -1.371 ; current_ip[1]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.407      ;
+; -1.369 ; current_ip[4]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.405      ;
+; -1.368 ; current_ip[3]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.404      ;
+; -1.363 ; current_ip[6]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.399      ;
+; -1.342 ; current_ip[6]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.378      ;
+; -1.335 ; current_ip[5]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.371      ;
+; -1.310 ; current_ip[1]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.346      ;
+; -1.308 ; current_ip[4]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.344      ;
+; -1.293 ; current_ip[5]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.329      ;
+; -1.290 ; current_ip[7]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.326      ;
+; -1.273 ; current_ip[9]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.309      ;
+; -1.269 ; current_ip[7]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.305      ;
+; -1.264 ; current_ip[6]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.300      ;
+; -1.261 ; current_ip[8]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.297      ;
+; -1.240 ; current_ip[8]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.276      ;
+; -1.222 ; current_ip[6]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.258      ;
+; -1.198 ; current_ip[0]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.234      ;
+; -1.198 ; current_ip[5]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.234      ;
+; -1.195 ; current_ip[2]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.231      ;
+; -1.191 ; current_ip[7]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.227      ;
+; -1.169 ; current_ip[0]  ; current_ip[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.205      ;
+; -1.166 ; current_ip[2]  ; current_ip[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.202      ;
+; -1.155 ; current_ip[9]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.152 ; current_ip[3]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.188      ;
+; -1.149 ; current_ip[7]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.185      ;
+; -1.120 ; current_ip[8]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.156      ;
+; -1.094 ; current_ip[1]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.130      ;
+; -1.092 ; current_ip[0]  ; current_ip[2]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.128      ;
+; -1.065 ; current_ip[1]  ; current_ip[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.101      ;
+; -1.014 ; current_ip[9]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.050      ;
+; -1.001 ; current_ip[10] ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.037      ;
+; -0.998 ; current_ip[7]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.034      ;
+; -0.988 ; current_ip[1]  ; current_ip[2]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.024      ;
+; -0.975 ; current_ip[11] ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.011      ;
+; -0.974 ; current_ip[0]  ; current_ip[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.010      ;
+; -0.883 ; current_ip[10] ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.919      ;
+; -0.847 ; current_ip[8]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.883      ;
+; -0.825 ; current_ip[5]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.861      ;
+; -0.822 ; current_ip[9]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.858      ;
+; -0.815 ; current_ip[6]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.851      ;
+; -0.811 ; current_ip[3]  ; current_ip[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.847      ;
+; -0.781 ; current_ip[11] ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.817      ;
+; -0.777 ; current_ip[2]  ; current_ip[2]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.813      ;
+; -0.776 ; current_ip[4]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.812      ;
+; -0.558 ; current_ip[1]  ; current_ip[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.594      ;
+; -0.430 ; current_ip[10] ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.466      ;
+; -0.358 ; current_ip[2]  ; instruccion[2]~reg0  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.394      ;
+; -0.324 ; current_ip[6]  ; instruccion[6]~reg0  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.360      ;
+; -0.321 ; current_ip[7]  ; instruccion[7]~reg0  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.357      ;
+; -0.318 ; current_ip[3]  ; instruccion[3]~reg0  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.354      ;
+; -0.148 ; current_ip[12] ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.184      ;
+; -0.099 ; current_ip[9]  ; instruccion[9]~reg0  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.135      ;
+; -0.098 ; current_ip[8]  ; instruccion[8]~reg0  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.134      ;
+; -0.096 ; current_ip[10] ; instruccion[10]~reg0 ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.091 ; current_ip[5]  ; instruccion[5]~reg0  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.127      ;
+; -0.090 ; current_ip[1]  ; instruccion[1]~reg0  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.126      ;
++--------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                              ;
++-------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+; 0.523 ; current_ip[4]  ; instruccion[4]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.664 ; current_ip[11] ; instruccion[11]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.930      ;
+; 0.849 ; current_ip[0]  ; instruccion[0]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.115      ;
+; 0.852 ; current_ip[12] ; instruccion[12]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.118      ;
+; 0.860 ; current_ip[1]  ; instruccion[1]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.126      ;
+; 0.861 ; current_ip[5]  ; instruccion[5]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.127      ;
+; 0.866 ; current_ip[10] ; instruccion[10]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.132      ;
+; 0.868 ; current_ip[8]  ; instruccion[8]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.134      ;
+; 0.869 ; current_ip[9]  ; instruccion[9]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.135      ;
+; 0.918 ; current_ip[12] ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.184      ;
+; 1.088 ; current_ip[3]  ; instruccion[3]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.354      ;
+; 1.091 ; current_ip[7]  ; instruccion[7]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.357      ;
+; 1.094 ; current_ip[6]  ; instruccion[6]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.360      ;
+; 1.128 ; current_ip[2]  ; instruccion[2]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.394      ;
+; 1.200 ; current_ip[10] ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.466      ;
+; 1.328 ; current_ip[1]  ; current_ip[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.594      ;
+; 1.546 ; current_ip[4]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.812      ;
+; 1.547 ; current_ip[2]  ; current_ip[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.813      ;
+; 1.551 ; current_ip[11] ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.817      ;
+; 1.581 ; current_ip[3]  ; current_ip[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.847      ;
+; 1.585 ; current_ip[6]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.851      ;
+; 1.592 ; current_ip[9]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.858      ;
+; 1.595 ; current_ip[5]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.861      ;
+; 1.617 ; current_ip[8]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.883      ;
+; 1.653 ; current_ip[10] ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.919      ;
+; 1.744 ; current_ip[0]  ; current_ip[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.010      ;
+; 1.745 ; current_ip[11] ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.011      ;
+; 1.758 ; current_ip[1]  ; current_ip[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.024      ;
+; 1.768 ; current_ip[7]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.034      ;
+; 1.771 ; current_ip[10] ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.037      ;
+; 1.784 ; current_ip[9]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.050      ;
+; 1.835 ; current_ip[1]  ; current_ip[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.101      ;
+; 1.862 ; current_ip[0]  ; current_ip[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.128      ;
+; 1.864 ; current_ip[1]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.130      ;
+; 1.890 ; current_ip[8]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.156      ;
+; 1.919 ; current_ip[7]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.185      ;
+; 1.922 ; current_ip[3]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.188      ;
+; 1.925 ; current_ip[9]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.936 ; current_ip[2]  ; current_ip[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.202      ;
+; 1.939 ; current_ip[0]  ; current_ip[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.205      ;
+; 1.961 ; current_ip[7]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.227      ;
+; 1.965 ; current_ip[2]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.231      ;
+; 1.968 ; current_ip[5]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.234      ;
+; 1.968 ; current_ip[0]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.234      ;
+; 1.992 ; current_ip[6]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.258      ;
+; 2.010 ; current_ip[8]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.276      ;
+; 2.031 ; current_ip[8]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.297      ;
+; 2.034 ; current_ip[6]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.300      ;
+; 2.039 ; current_ip[7]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.305      ;
+; 2.043 ; current_ip[9]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.309      ;
+; 2.060 ; current_ip[7]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.326      ;
+; 2.063 ; current_ip[5]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.329      ;
+; 2.078 ; current_ip[4]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.344      ;
+; 2.080 ; current_ip[1]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.346      ;
+; 2.105 ; current_ip[5]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.371      ;
+; 2.112 ; current_ip[6]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.378      ;
+; 2.133 ; current_ip[6]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.399      ;
+; 2.138 ; current_ip[3]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.404      ;
+; 2.139 ; current_ip[4]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.405      ;
+; 2.141 ; current_ip[1]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.407      ;
+; 2.149 ; current_ip[8]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.415      ;
+; 2.153 ; current_ip[6]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.419      ;
+; 2.178 ; current_ip[7]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.444      ;
+; 2.181 ; current_ip[2]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.447      ;
+; 2.183 ; current_ip[5]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.449      ;
+; 2.184 ; current_ip[0]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.450      ;
+; 2.199 ; current_ip[3]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.465      ;
+; 2.204 ; current_ip[5]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.470      ;
+; 2.224 ; current_ip[5]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.490      ;
+; 2.234 ; current_ip[4]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.500      ;
+; 2.236 ; current_ip[1]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.502      ;
+; 2.242 ; current_ip[2]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.508      ;
+; 2.245 ; current_ip[0]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.511      ;
+; 2.251 ; current_ip[6]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.517      ;
+; 2.276 ; current_ip[4]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.542      ;
+; 2.278 ; current_ip[1]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.544      ;
+; 2.290 ; current_ip[0]  ; current_ip[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.556      ;
+; 2.294 ; current_ip[3]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.560      ;
+; 2.322 ; current_ip[5]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.588      ;
+; 2.336 ; current_ip[3]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.602      ;
+; 2.337 ; current_ip[2]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.603      ;
+; 2.340 ; current_ip[0]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.606      ;
+; 2.354 ; current_ip[4]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.620      ;
+; 2.356 ; current_ip[1]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.622      ;
+; 2.375 ; current_ip[4]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.641      ;
+; 2.377 ; current_ip[1]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.643      ;
+; 2.379 ; current_ip[2]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.645      ;
+; 2.382 ; current_ip[0]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.648      ;
+; 2.395 ; current_ip[4]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.661      ;
+; 2.397 ; current_ip[1]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.663      ;
+; 2.414 ; current_ip[3]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.680      ;
+; 2.435 ; current_ip[3]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.701      ;
+; 2.455 ; current_ip[3]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.721      ;
+; 2.457 ; current_ip[2]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.723      ;
+; 2.460 ; current_ip[0]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.726      ;
+; 2.478 ; current_ip[2]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.744      ;
+; 2.481 ; current_ip[0]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.747      ;
+; 2.493 ; current_ip[4]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.759      ;
+; 2.495 ; current_ip[1]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.761      ;
+; 2.498 ; current_ip[2]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.764      ;
++-------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[0]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[0]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[0]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[0]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[10]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[10]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[10]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[10]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[11]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[11]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[11]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[11]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[12]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[12]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[12]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[12]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[1]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[1]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[1]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[1]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[2]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[2]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[2]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[2]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[3]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[3]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[3]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[3]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[4]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[4]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[4]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[4]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[5]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[5]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[5]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[5]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[6]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[6]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[6]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[6]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[7]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[7]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[7]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[7]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[8]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[8]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[8]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[8]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[9]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[9]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[9]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[9]~reg0  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[10]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[10]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[11]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[11]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[12]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[12]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[2]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[2]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[3]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[3]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[4]|clk    ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; cargar[*]   ; clk        ; 4.465 ; 4.465 ; Rise       ; clk             ;
+;  cargar[0]  ; clk        ; 4.465 ; 4.465 ; Rise       ; clk             ;
+;  cargar[1]  ; clk        ; 3.689 ; 3.689 ; Rise       ; clk             ;
+;  cargar[2]  ; clk        ; 3.269 ; 3.269 ; Rise       ; clk             ;
+;  cargar[3]  ; clk        ; 3.482 ; 3.482 ; Rise       ; clk             ;
+;  cargar[4]  ; clk        ; 3.696 ; 3.696 ; Rise       ; clk             ;
+;  cargar[5]  ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+;  cargar[6]  ; clk        ; 3.723 ; 3.723 ; Rise       ; clk             ;
+;  cargar[7]  ; clk        ; 3.420 ; 3.420 ; Rise       ; clk             ;
+;  cargar[8]  ; clk        ; 3.722 ; 3.722 ; Rise       ; clk             ;
+;  cargar[9]  ; clk        ; 3.483 ; 3.483 ; Rise       ; clk             ;
+;  cargar[10] ; clk        ; 3.548 ; 3.548 ; Rise       ; clk             ;
+;  cargar[11] ; clk        ; 3.716 ; 3.716 ; Rise       ; clk             ;
+;  cargar[12] ; clk        ; 3.556 ; 3.556 ; Rise       ; clk             ;
+; get_ip      ; clk        ; 4.967 ; 4.967 ; Rise       ; clk             ;
+; inc_ip      ; clk        ; 4.639 ; 4.639 ; Rise       ; clk             ;
+; load_ip     ; clk        ; 4.783 ; 4.783 ; Rise       ; clk             ;
+; rst_ip      ; clk        ; 4.440 ; 4.440 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; cargar[*]   ; clk        ; -3.039 ; -3.039 ; Rise       ; clk             ;
+;  cargar[0]  ; clk        ; -4.235 ; -4.235 ; Rise       ; clk             ;
+;  cargar[1]  ; clk        ; -3.459 ; -3.459 ; Rise       ; clk             ;
+;  cargar[2]  ; clk        ; -3.039 ; -3.039 ; Rise       ; clk             ;
+;  cargar[3]  ; clk        ; -3.252 ; -3.252 ; Rise       ; clk             ;
+;  cargar[4]  ; clk        ; -3.466 ; -3.466 ; Rise       ; clk             ;
+;  cargar[5]  ; clk        ; -3.441 ; -3.441 ; Rise       ; clk             ;
+;  cargar[6]  ; clk        ; -3.493 ; -3.493 ; Rise       ; clk             ;
+;  cargar[7]  ; clk        ; -3.190 ; -3.190 ; Rise       ; clk             ;
+;  cargar[8]  ; clk        ; -3.492 ; -3.492 ; Rise       ; clk             ;
+;  cargar[9]  ; clk        ; -3.253 ; -3.253 ; Rise       ; clk             ;
+;  cargar[10] ; clk        ; -3.318 ; -3.318 ; Rise       ; clk             ;
+;  cargar[11] ; clk        ; -3.486 ; -3.486 ; Rise       ; clk             ;
+;  cargar[12] ; clk        ; -3.326 ; -3.326 ; Rise       ; clk             ;
+; get_ip      ; clk        ; -3.865 ; -3.865 ; Rise       ; clk             ;
+; inc_ip      ; clk        ; -3.259 ; -3.259 ; Rise       ; clk             ;
+; load_ip     ; clk        ; -3.362 ; -3.362 ; Rise       ; clk             ;
+; rst_ip      ; clk        ; -4.018 ; -4.018 ; Rise       ; clk             ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; instruccion[*]   ; clk        ; 7.082 ; 7.082 ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 6.580 ; 6.580 ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 6.654 ; 6.654 ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 6.628 ; 6.628 ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 6.605 ; 6.605 ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 7.082 ; 7.082 ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 6.825 ; 6.825 ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 6.822 ; 6.822 ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 6.636 ; 6.636 ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 7.045 ; 7.045 ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 6.791 ; 6.791 ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 6.687 ; 6.687 ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 6.819 ; 6.819 ; Rise       ; clk             ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; instruccion[*]   ; clk        ; 6.580 ; 6.580 ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 6.580 ; 6.580 ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 6.654 ; 6.654 ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 6.628 ; 6.628 ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 6.605 ; 6.605 ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 7.082 ; 7.082 ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 6.825 ; 6.825 ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 6.822 ; 6.822 ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 6.636 ; 6.636 ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 7.045 ; 7.045 ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 6.791 ; 6.791 ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 6.687 ; 6.687 ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 6.819 ; 6.819 ; Rise       ; clk             ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Output Enable Times                                                         ;
++------------------+------------+-------+------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+------+------------+-----------------+
+; instruccion[*]   ; clk        ; 6.513 ;      ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 6.523 ;      ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 6.533 ;      ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 6.514 ;      ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 6.553 ;      ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 6.534 ;      ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 6.797 ;      ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 6.526 ;      ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 6.540 ;      ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 6.563 ;      ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 6.764 ;      ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 6.513 ;      ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 6.834 ;      ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 6.543 ;      ; Rise       ; clk             ;
++------------------+------------+-------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Output Enable Times                                                 ;
++------------------+------------+-------+------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+------+------------+-----------------+
+; instruccion[*]   ; clk        ; 6.513 ;      ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 6.523 ;      ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 6.533 ;      ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 6.514 ;      ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 6.553 ;      ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 6.534 ;      ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 6.797 ;      ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 6.526 ;      ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 6.540 ;      ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 6.563 ;      ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 6.764 ;      ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 6.513 ;      ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 6.834 ;      ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 6.543 ;      ; Rise       ; clk             ;
++------------------+------------+-------+------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Output Disable Times                                                                 ;
++------------------+------------+-----------+-----------+------------+-----------------+
+; Data Port        ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++------------------+------------+-----------+-----------+------------+-----------------+
+; instruccion[*]   ; clk        ; 6.513     ;           ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 6.523     ;           ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 6.533     ;           ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 6.514     ;           ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 6.553     ;           ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 6.534     ;           ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 6.797     ;           ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 6.526     ;           ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 6.540     ;           ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 6.563     ;           ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 6.764     ;           ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 6.513     ;           ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 6.834     ;           ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 6.543     ;           ; Rise       ; clk             ;
++------------------+------------+-----------+-----------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                         ;
++------------------+------------+-----------+-----------+------------+-----------------+
+; Data Port        ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++------------------+------------+-----------+-----------+------------+-----------------+
+; instruccion[*]   ; clk        ; 6.513     ;           ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 6.523     ;           ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 6.533     ;           ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 6.514     ;           ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 6.553     ;           ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 6.534     ;           ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 6.797     ;           ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 6.526     ;           ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 6.540     ;           ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 6.563     ;           ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 6.764     ;           ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 6.513     ;           ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 6.834     ;           ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 6.543     ;           ; Rise       ; clk             ;
++------------------+------------+-----------+-----------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.291 ; -1.676        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.240 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -40.380               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                              ;
++--------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+; -0.291 ; current_ip[2]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.323      ;
+; -0.284 ; current_ip[0]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.001      ; 1.317      ;
+; -0.261 ; current_ip[3]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.293      ;
+; -0.243 ; current_ip[2]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.274      ;
+; -0.238 ; current_ip[1]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.001      ; 1.271      ;
+; -0.236 ; current_ip[0]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.268      ;
+; -0.230 ; current_ip[2]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.262      ;
+; -0.226 ; current_ip[4]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.258      ;
+; -0.223 ; current_ip[2]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.255      ;
+; -0.223 ; current_ip[0]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.256      ;
+; -0.216 ; current_ip[0]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.249      ;
+; -0.213 ; current_ip[3]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.244      ;
+; -0.200 ; current_ip[3]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.232      ;
+; -0.193 ; current_ip[3]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.225      ;
+; -0.190 ; current_ip[1]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.222      ;
+; -0.183 ; current_ip[2]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.215      ;
+; -0.178 ; current_ip[4]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.209      ;
+; -0.177 ; current_ip[1]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.210      ;
+; -0.176 ; current_ip[0]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.209      ;
+; -0.174 ; current_ip[2]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.205      ;
+; -0.170 ; current_ip[1]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.203      ;
+; -0.167 ; current_ip[0]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.199      ;
+; -0.165 ; current_ip[4]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.197      ;
+; -0.158 ; current_ip[4]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.190      ;
+; -0.153 ; current_ip[3]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.185      ;
+; -0.144 ; current_ip[3]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.175      ;
+; -0.134 ; current_ip[5]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.166      ;
+; -0.131 ; current_ip[0]  ; current_ip[0]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.163      ;
+; -0.130 ; current_ip[1]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.163      ;
+; -0.121 ; current_ip[1]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.153      ;
+; -0.118 ; current_ip[4]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.150      ;
+; -0.115 ; current_ip[2]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.147      ;
+; -0.109 ; current_ip[4]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.140      ;
+; -0.108 ; current_ip[0]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.141      ;
+; -0.096 ; current_ip[6]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.128      ;
+; -0.086 ; current_ip[2]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.118      ;
+; -0.086 ; current_ip[5]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.117      ;
+; -0.085 ; current_ip[3]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.117      ;
+; -0.079 ; current_ip[0]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.112      ;
+; -0.073 ; current_ip[5]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.105      ;
+; -0.066 ; current_ip[5]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.098      ;
+; -0.062 ; current_ip[1]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.095      ;
+; -0.061 ; current_ip[7]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.093      ;
+; -0.056 ; current_ip[3]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.088      ;
+; -0.050 ; current_ip[4]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.082      ;
+; -0.048 ; current_ip[6]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.079      ;
+; -0.043 ; current_ip[8]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.075      ;
+; -0.035 ; current_ip[6]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.067      ;
+; -0.033 ; current_ip[1]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.001      ; 1.066      ;
+; -0.028 ; current_ip[6]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.060      ;
+; -0.026 ; current_ip[5]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.058      ;
+; -0.021 ; current_ip[4]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.053      ;
+; -0.017 ; current_ip[5]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.048      ;
+; -0.013 ; current_ip[7]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.044      ;
+; 0.003  ; current_ip[9]  ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.029      ;
+; 0.005  ; current_ip[8]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.026      ;
+; 0.007  ; current_ip[7]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.025      ;
+; 0.012  ; current_ip[6]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.020      ;
+; 0.021  ; current_ip[6]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; -0.001     ; 1.010      ;
+; 0.025  ; current_ip[8]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.007      ;
+; 0.027  ; current_ip[2]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.005      ;
+; 0.034  ; current_ip[0]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.999      ;
+; 0.042  ; current_ip[5]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.990      ;
+; 0.047  ; current_ip[7]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.985      ;
+; 0.050  ; current_ip[2]  ; current_ip[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.982      ;
+; 0.051  ; current_ip[9]  ; current_ip[12]       ; clk          ; clk         ; 1.000        ; -0.001     ; 0.980      ;
+; 0.056  ; current_ip[7]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; -0.001     ; 0.975      ;
+; 0.057  ; current_ip[3]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.975      ;
+; 0.057  ; current_ip[0]  ; current_ip[3]        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.976      ;
+; 0.074  ; current_ip[8]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; -0.001     ; 0.957      ;
+; 0.080  ; current_ip[1]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.953      ;
+; 0.096  ; current_ip[0]  ; current_ip[2]        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.937      ;
+; 0.103  ; current_ip[7]  ; current_ip[7]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.929      ;
+; 0.103  ; current_ip[1]  ; current_ip[3]        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.930      ;
+; 0.120  ; current_ip[9]  ; current_ip[10]       ; clk          ; clk         ; 1.000        ; -0.001     ; 0.911      ;
+; 0.134  ; current_ip[10] ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.001      ; 0.899      ;
+; 0.134  ; current_ip[11] ; current_ip[12]       ; clk          ; clk         ; 1.000        ; -0.001     ; 0.897      ;
+; 0.142  ; current_ip[1]  ; current_ip[2]        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.891      ;
+; 0.159  ; current_ip[0]  ; current_ip[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.873      ;
+; 0.170  ; current_ip[8]  ; current_ip[8]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.862      ;
+; 0.174  ; current_ip[9]  ; current_ip[9]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.858      ;
+; 0.174  ; current_ip[5]  ; current_ip[5]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.858      ;
+; 0.182  ; current_ip[10] ; current_ip[12]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.850      ;
+; 0.183  ; current_ip[6]  ; current_ip[6]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.849      ;
+; 0.183  ; current_ip[3]  ; current_ip[3]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.849      ;
+; 0.189  ; current_ip[11] ; current_ip[11]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.843      ;
+; 0.191  ; current_ip[4]  ; current_ip[4]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.841      ;
+; 0.192  ; current_ip[2]  ; current_ip[2]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.840      ;
+; 0.308  ; current_ip[1]  ; current_ip[1]        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.724      ;
+; 0.340  ; current_ip[2]  ; instruccion[2]~reg0  ; clk          ; clk         ; 1.000        ; -0.001     ; 0.691      ;
+; 0.354  ; current_ip[10] ; current_ip[10]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.678      ;
+; 0.360  ; current_ip[7]  ; instruccion[7]~reg0  ; clk          ; clk         ; 1.000        ; -0.001     ; 0.671      ;
+; 0.361  ; current_ip[3]  ; instruccion[3]~reg0  ; clk          ; clk         ; 1.000        ; -0.001     ; 0.670      ;
+; 0.361  ; current_ip[6]  ; instruccion[6]~reg0  ; clk          ; clk         ; 1.000        ; -0.001     ; 0.670      ;
+; 0.456  ; current_ip[8]  ; instruccion[8]~reg0  ; clk          ; clk         ; 1.000        ; -0.001     ; 0.575      ;
+; 0.456  ; current_ip[9]  ; instruccion[9]~reg0  ; clk          ; clk         ; 1.000        ; -0.001     ; 0.575      ;
+; 0.460  ; current_ip[10] ; instruccion[10]~reg0 ; clk          ; clk         ; 1.000        ; 0.000      ; 0.572      ;
+; 0.462  ; current_ip[5]  ; instruccion[5]~reg0  ; clk          ; clk         ; 1.000        ; -0.001     ; 0.569      ;
+; 0.465  ; current_ip[1]  ; instruccion[1]~reg0  ; clk          ; clk         ; 1.000        ; 0.001      ; 0.568      ;
+; 0.468  ; current_ip[12] ; instruccion[12]~reg0 ; clk          ; clk         ; 1.000        ; 0.000      ; 0.564      ;
++--------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                              ;
++-------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+; 0.240 ; current_ip[4]  ; instruccion[4]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.325 ; current_ip[11] ; instruccion[11]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.404 ; current_ip[12] ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.408 ; current_ip[0]  ; instruccion[0]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.560      ;
+; 0.412 ; current_ip[12] ; instruccion[12]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.564      ;
+; 0.415 ; current_ip[1]  ; instruccion[1]~reg0  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.568      ;
+; 0.418 ; current_ip[5]  ; instruccion[5]~reg0  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.569      ;
+; 0.420 ; current_ip[10] ; instruccion[10]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.572      ;
+; 0.424 ; current_ip[8]  ; instruccion[8]~reg0  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.575      ;
+; 0.424 ; current_ip[9]  ; instruccion[9]~reg0  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.575      ;
+; 0.519 ; current_ip[3]  ; instruccion[3]~reg0  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.670      ;
+; 0.519 ; current_ip[6]  ; instruccion[6]~reg0  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.670      ;
+; 0.520 ; current_ip[7]  ; instruccion[7]~reg0  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.671      ;
+; 0.526 ; current_ip[10] ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.678      ;
+; 0.540 ; current_ip[2]  ; instruccion[2]~reg0  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.691      ;
+; 0.572 ; current_ip[1]  ; current_ip[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.724      ;
+; 0.688 ; current_ip[2]  ; current_ip[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.840      ;
+; 0.689 ; current_ip[4]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.841      ;
+; 0.691 ; current_ip[11] ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.843      ;
+; 0.697 ; current_ip[3]  ; current_ip[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.849      ;
+; 0.697 ; current_ip[6]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.849      ;
+; 0.698 ; current_ip[10] ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.850      ;
+; 0.706 ; current_ip[5]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.858      ;
+; 0.706 ; current_ip[9]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.858      ;
+; 0.710 ; current_ip[8]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.862      ;
+; 0.721 ; current_ip[0]  ; current_ip[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.873      ;
+; 0.738 ; current_ip[1]  ; current_ip[2]        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.891      ;
+; 0.746 ; current_ip[10] ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.001      ; 0.899      ;
+; 0.746 ; current_ip[11] ; current_ip[12]       ; clk          ; clk         ; 0.000        ; -0.001     ; 0.897      ;
+; 0.760 ; current_ip[9]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; -0.001     ; 0.911      ;
+; 0.777 ; current_ip[7]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.929      ;
+; 0.777 ; current_ip[1]  ; current_ip[3]        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.930      ;
+; 0.784 ; current_ip[0]  ; current_ip[2]        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.937      ;
+; 0.800 ; current_ip[1]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.953      ;
+; 0.806 ; current_ip[8]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; -0.001     ; 0.957      ;
+; 0.823 ; current_ip[0]  ; current_ip[3]        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.976      ;
+; 0.823 ; current_ip[3]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.975      ;
+; 0.824 ; current_ip[7]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; -0.001     ; 0.975      ;
+; 0.829 ; current_ip[9]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; -0.001     ; 0.980      ;
+; 0.830 ; current_ip[2]  ; current_ip[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.982      ;
+; 0.833 ; current_ip[7]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.985      ;
+; 0.838 ; current_ip[5]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.990      ;
+; 0.846 ; current_ip[0]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.999      ;
+; 0.853 ; current_ip[2]  ; current_ip[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.005      ;
+; 0.855 ; current_ip[8]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.007      ;
+; 0.859 ; current_ip[6]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.010      ;
+; 0.868 ; current_ip[6]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.020      ;
+; 0.873 ; current_ip[7]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.025      ;
+; 0.875 ; current_ip[8]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.026      ;
+; 0.877 ; current_ip[9]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.029      ;
+; 0.893 ; current_ip[7]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.044      ;
+; 0.897 ; current_ip[5]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.048      ;
+; 0.901 ; current_ip[4]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.906 ; current_ip[5]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.058      ;
+; 0.908 ; current_ip[6]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.913 ; current_ip[1]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.066      ;
+; 0.915 ; current_ip[6]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.067      ;
+; 0.923 ; current_ip[8]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.928 ; current_ip[6]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.079      ;
+; 0.930 ; current_ip[4]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.082      ;
+; 0.936 ; current_ip[3]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.088      ;
+; 0.941 ; current_ip[7]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.093      ;
+; 0.942 ; current_ip[1]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.095      ;
+; 0.946 ; current_ip[5]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.098      ;
+; 0.953 ; current_ip[5]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.105      ;
+; 0.959 ; current_ip[0]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.112      ;
+; 0.965 ; current_ip[3]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.117      ;
+; 0.966 ; current_ip[2]  ; current_ip[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.118      ;
+; 0.966 ; current_ip[5]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.117      ;
+; 0.976 ; current_ip[6]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.128      ;
+; 0.988 ; current_ip[0]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.141      ;
+; 0.989 ; current_ip[4]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.140      ;
+; 0.995 ; current_ip[2]  ; current_ip[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.147      ;
+; 0.998 ; current_ip[4]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.150      ;
+; 1.001 ; current_ip[1]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.153      ;
+; 1.010 ; current_ip[1]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.163      ;
+; 1.011 ; current_ip[0]  ; current_ip[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.163      ;
+; 1.014 ; current_ip[5]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.166      ;
+; 1.024 ; current_ip[3]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.175      ;
+; 1.033 ; current_ip[3]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.185      ;
+; 1.038 ; current_ip[4]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.190      ;
+; 1.045 ; current_ip[4]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.197      ;
+; 1.047 ; current_ip[0]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.199      ;
+; 1.050 ; current_ip[1]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.203      ;
+; 1.054 ; current_ip[2]  ; current_ip[10]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.205      ;
+; 1.056 ; current_ip[0]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.209      ;
+; 1.057 ; current_ip[1]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.210      ;
+; 1.058 ; current_ip[4]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.209      ;
+; 1.063 ; current_ip[2]  ; current_ip[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.215      ;
+; 1.070 ; current_ip[1]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.222      ;
+; 1.073 ; current_ip[3]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.225      ;
+; 1.080 ; current_ip[3]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.232      ;
+; 1.093 ; current_ip[3]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.244      ;
+; 1.096 ; current_ip[0]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.249      ;
+; 1.103 ; current_ip[2]  ; current_ip[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.255      ;
+; 1.103 ; current_ip[0]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.256      ;
+; 1.106 ; current_ip[4]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 1.110 ; current_ip[2]  ; current_ip[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 1.116 ; current_ip[0]  ; current_ip[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.268      ;
+; 1.118 ; current_ip[1]  ; current_ip[11]       ; clk          ; clk         ; 0.000        ; 0.001      ; 1.271      ;
++-------+----------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[0]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[0]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[0]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[0]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[10]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[10]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[10]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[10]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[11]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[11]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[11]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[11]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[12]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[12]~en   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[12]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[12]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[1]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[1]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[1]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[1]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[2]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[2]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[2]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[2]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[3]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[3]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[3]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[3]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[4]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[4]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[4]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[4]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[5]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[5]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[5]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[5]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[6]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[6]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[6]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[6]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[7]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[7]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[7]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[7]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[8]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[8]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[8]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[8]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[9]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[9]~en    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; instruccion[9]~reg0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; instruccion[9]~reg0  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[10]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[10]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[11]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[11]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[12]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[12]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[2]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[2]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[3]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; current_ip[3]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; current_ip[4]|clk    ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; cargar[*]   ; clk        ; 2.257 ; 2.257 ; Rise       ; clk             ;
+;  cargar[0]  ; clk        ; 2.257 ; 2.257 ; Rise       ; clk             ;
+;  cargar[1]  ; clk        ; 1.877 ; 1.877 ; Rise       ; clk             ;
+;  cargar[2]  ; clk        ; 1.705 ; 1.705 ; Rise       ; clk             ;
+;  cargar[3]  ; clk        ; 1.797 ; 1.797 ; Rise       ; clk             ;
+;  cargar[4]  ; clk        ; 1.894 ; 1.894 ; Rise       ; clk             ;
+;  cargar[5]  ; clk        ; 1.865 ; 1.865 ; Rise       ; clk             ;
+;  cargar[6]  ; clk        ; 1.908 ; 1.908 ; Rise       ; clk             ;
+;  cargar[7]  ; clk        ; 1.777 ; 1.777 ; Rise       ; clk             ;
+;  cargar[8]  ; clk        ; 1.904 ; 1.904 ; Rise       ; clk             ;
+;  cargar[9]  ; clk        ; 1.805 ; 1.805 ; Rise       ; clk             ;
+;  cargar[10] ; clk        ; 1.823 ; 1.823 ; Rise       ; clk             ;
+;  cargar[11] ; clk        ; 1.913 ; 1.913 ; Rise       ; clk             ;
+;  cargar[12] ; clk        ; 1.833 ; 1.833 ; Rise       ; clk             ;
+; get_ip      ; clk        ; 2.525 ; 2.525 ; Rise       ; clk             ;
+; inc_ip      ; clk        ; 2.418 ; 2.418 ; Rise       ; clk             ;
+; load_ip     ; clk        ; 2.446 ; 2.446 ; Rise       ; clk             ;
+; rst_ip      ; clk        ; 2.309 ; 2.309 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; cargar[*]   ; clk        ; -1.585 ; -1.585 ; Rise       ; clk             ;
+;  cargar[0]  ; clk        ; -2.137 ; -2.137 ; Rise       ; clk             ;
+;  cargar[1]  ; clk        ; -1.757 ; -1.757 ; Rise       ; clk             ;
+;  cargar[2]  ; clk        ; -1.585 ; -1.585 ; Rise       ; clk             ;
+;  cargar[3]  ; clk        ; -1.677 ; -1.677 ; Rise       ; clk             ;
+;  cargar[4]  ; clk        ; -1.774 ; -1.774 ; Rise       ; clk             ;
+;  cargar[5]  ; clk        ; -1.745 ; -1.745 ; Rise       ; clk             ;
+;  cargar[6]  ; clk        ; -1.788 ; -1.788 ; Rise       ; clk             ;
+;  cargar[7]  ; clk        ; -1.657 ; -1.657 ; Rise       ; clk             ;
+;  cargar[8]  ; clk        ; -1.784 ; -1.784 ; Rise       ; clk             ;
+;  cargar[9]  ; clk        ; -1.685 ; -1.685 ; Rise       ; clk             ;
+;  cargar[10] ; clk        ; -1.703 ; -1.703 ; Rise       ; clk             ;
+;  cargar[11] ; clk        ; -1.793 ; -1.793 ; Rise       ; clk             ;
+;  cargar[12] ; clk        ; -1.713 ; -1.713 ; Rise       ; clk             ;
+; get_ip      ; clk        ; -1.979 ; -1.979 ; Rise       ; clk             ;
+; inc_ip      ; clk        ; -1.702 ; -1.702 ; Rise       ; clk             ;
+; load_ip     ; clk        ; -1.712 ; -1.712 ; Rise       ; clk             ;
+; rst_ip      ; clk        ; -2.102 ; -2.102 ; Rise       ; clk             ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; instruccion[*]   ; clk        ; 4.036 ; 4.036 ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 3.792 ; 3.792 ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 3.842 ; 3.842 ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 3.883 ; 3.883 ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 3.832 ; 3.832 ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 3.812 ; 3.812 ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 4.036 ; 4.036 ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 3.908 ; 3.908 ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 3.910 ; 3.910 ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 3.841 ; 3.841 ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 3.881 ; 3.881 ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 3.911 ; 3.911 ; Rise       ; clk             ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; instruccion[*]   ; clk        ; 3.792 ; 3.792 ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 3.792 ; 3.792 ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 3.842 ; 3.842 ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 3.883 ; 3.883 ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 3.832 ; 3.832 ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 3.812 ; 3.812 ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 4.036 ; 4.036 ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 3.908 ; 3.908 ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 3.910 ; 3.910 ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 3.841 ; 3.841 ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 3.881 ; 3.881 ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 3.911 ; 3.911 ; Rise       ; clk             ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Output Enable Times                                                         ;
++------------------+------------+-------+------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+------+------------+-----------------+
+; instruccion[*]   ; clk        ; 3.737 ;      ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 3.747 ;      ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 3.758 ;      ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 3.738 ;      ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 3.778 ;      ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 3.758 ;      ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 3.889 ;      ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 3.749 ;      ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 3.765 ;      ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 3.787 ;      ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 3.858 ;      ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 3.737 ;      ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 3.918 ;      ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 3.767 ;      ; Rise       ; clk             ;
++------------------+------------+-------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Output Enable Times                                                 ;
++------------------+------------+-------+------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+------+------------+-----------------+
+; instruccion[*]   ; clk        ; 3.737 ;      ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 3.747 ;      ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 3.758 ;      ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 3.738 ;      ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 3.778 ;      ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 3.758 ;      ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 3.889 ;      ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 3.749 ;      ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 3.765 ;      ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 3.787 ;      ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 3.858 ;      ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 3.737 ;      ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 3.918 ;      ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 3.767 ;      ; Rise       ; clk             ;
++------------------+------------+-------+------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Output Disable Times                                                                 ;
++------------------+------------+-----------+-----------+------------+-----------------+
+; Data Port        ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++------------------+------------+-----------+-----------+------------+-----------------+
+; instruccion[*]   ; clk        ; 3.737     ;           ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 3.747     ;           ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 3.758     ;           ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 3.738     ;           ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 3.778     ;           ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 3.758     ;           ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 3.889     ;           ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 3.749     ;           ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 3.765     ;           ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 3.787     ;           ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 3.858     ;           ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 3.737     ;           ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 3.918     ;           ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 3.767     ;           ; Rise       ; clk             ;
++------------------+------------+-----------+-----------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                         ;
++------------------+------------+-----------+-----------+------------+-----------------+
+; Data Port        ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++------------------+------------+-----------+-----------+------------+-----------------+
+; instruccion[*]   ; clk        ; 3.737     ;           ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 3.747     ;           ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 3.758     ;           ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 3.738     ;           ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 3.778     ;           ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 3.758     ;           ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 3.889     ;           ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 3.749     ;           ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 3.765     ;           ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 3.787     ;           ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 3.858     ;           ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 3.737     ;           ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 3.918     ;           ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 3.767     ;           ; Rise       ; clk             ;
++------------------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.829  ; 0.240 ; N/A      ; N/A     ; -1.380              ;
+;  clk             ; -1.829  ; 0.240 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -20.941 ; 0.0   ; 0.0      ; 0.0     ; -40.38              ;
+;  clk             ; -20.941 ; 0.000 ; N/A      ; N/A     ; -40.380             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; cargar[*]   ; clk        ; 4.465 ; 4.465 ; Rise       ; clk             ;
+;  cargar[0]  ; clk        ; 4.465 ; 4.465 ; Rise       ; clk             ;
+;  cargar[1]  ; clk        ; 3.689 ; 3.689 ; Rise       ; clk             ;
+;  cargar[2]  ; clk        ; 3.269 ; 3.269 ; Rise       ; clk             ;
+;  cargar[3]  ; clk        ; 3.482 ; 3.482 ; Rise       ; clk             ;
+;  cargar[4]  ; clk        ; 3.696 ; 3.696 ; Rise       ; clk             ;
+;  cargar[5]  ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+;  cargar[6]  ; clk        ; 3.723 ; 3.723 ; Rise       ; clk             ;
+;  cargar[7]  ; clk        ; 3.420 ; 3.420 ; Rise       ; clk             ;
+;  cargar[8]  ; clk        ; 3.722 ; 3.722 ; Rise       ; clk             ;
+;  cargar[9]  ; clk        ; 3.483 ; 3.483 ; Rise       ; clk             ;
+;  cargar[10] ; clk        ; 3.548 ; 3.548 ; Rise       ; clk             ;
+;  cargar[11] ; clk        ; 3.716 ; 3.716 ; Rise       ; clk             ;
+;  cargar[12] ; clk        ; 3.556 ; 3.556 ; Rise       ; clk             ;
+; get_ip      ; clk        ; 4.967 ; 4.967 ; Rise       ; clk             ;
+; inc_ip      ; clk        ; 4.639 ; 4.639 ; Rise       ; clk             ;
+; load_ip     ; clk        ; 4.783 ; 4.783 ; Rise       ; clk             ;
+; rst_ip      ; clk        ; 4.440 ; 4.440 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; cargar[*]   ; clk        ; -1.585 ; -1.585 ; Rise       ; clk             ;
+;  cargar[0]  ; clk        ; -2.137 ; -2.137 ; Rise       ; clk             ;
+;  cargar[1]  ; clk        ; -1.757 ; -1.757 ; Rise       ; clk             ;
+;  cargar[2]  ; clk        ; -1.585 ; -1.585 ; Rise       ; clk             ;
+;  cargar[3]  ; clk        ; -1.677 ; -1.677 ; Rise       ; clk             ;
+;  cargar[4]  ; clk        ; -1.774 ; -1.774 ; Rise       ; clk             ;
+;  cargar[5]  ; clk        ; -1.745 ; -1.745 ; Rise       ; clk             ;
+;  cargar[6]  ; clk        ; -1.788 ; -1.788 ; Rise       ; clk             ;
+;  cargar[7]  ; clk        ; -1.657 ; -1.657 ; Rise       ; clk             ;
+;  cargar[8]  ; clk        ; -1.784 ; -1.784 ; Rise       ; clk             ;
+;  cargar[9]  ; clk        ; -1.685 ; -1.685 ; Rise       ; clk             ;
+;  cargar[10] ; clk        ; -1.703 ; -1.703 ; Rise       ; clk             ;
+;  cargar[11] ; clk        ; -1.793 ; -1.793 ; Rise       ; clk             ;
+;  cargar[12] ; clk        ; -1.713 ; -1.713 ; Rise       ; clk             ;
+; get_ip      ; clk        ; -1.979 ; -1.979 ; Rise       ; clk             ;
+; inc_ip      ; clk        ; -1.702 ; -1.702 ; Rise       ; clk             ;
+; load_ip     ; clk        ; -1.712 ; -1.712 ; Rise       ; clk             ;
+; rst_ip      ; clk        ; -2.102 ; -2.102 ; Rise       ; clk             ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; instruccion[*]   ; clk        ; 7.082 ; 7.082 ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 6.580 ; 6.580 ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 6.654 ; 6.654 ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 6.795 ; 6.795 ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 6.628 ; 6.628 ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 6.605 ; 6.605 ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 7.082 ; 7.082 ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 6.825 ; 6.825 ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 6.822 ; 6.822 ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 6.636 ; 6.636 ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 7.045 ; 7.045 ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 6.791 ; 6.791 ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 6.687 ; 6.687 ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 6.819 ; 6.819 ; Rise       ; clk             ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; instruccion[*]   ; clk        ; 3.792 ; 3.792 ; Rise       ; clk             ;
+;  instruccion[0]  ; clk        ; 3.792 ; 3.792 ; Rise       ; clk             ;
+;  instruccion[1]  ; clk        ; 3.842 ; 3.842 ; Rise       ; clk             ;
+;  instruccion[2]  ; clk        ; 3.883 ; 3.883 ; Rise       ; clk             ;
+;  instruccion[3]  ; clk        ; 3.832 ; 3.832 ; Rise       ; clk             ;
+;  instruccion[4]  ; clk        ; 3.812 ; 3.812 ; Rise       ; clk             ;
+;  instruccion[5]  ; clk        ; 4.036 ; 4.036 ; Rise       ; clk             ;
+;  instruccion[6]  ; clk        ; 3.908 ; 3.908 ; Rise       ; clk             ;
+;  instruccion[7]  ; clk        ; 3.910 ; 3.910 ; Rise       ; clk             ;
+;  instruccion[8]  ; clk        ; 3.841 ; 3.841 ; Rise       ; clk             ;
+;  instruccion[9]  ; clk        ; 4.001 ; 4.001 ; Rise       ; clk             ;
+;  instruccion[10] ; clk        ; 3.881 ; 3.881 ; Rise       ; clk             ;
+;  instruccion[11] ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
+;  instruccion[12] ; clk        ; 3.911 ; 3.911 ; Rise       ; clk             ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 104      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 104      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 17    ; 17   ;
+; Unconstrained Input Port Paths  ; 91    ; 91   ;
+; Unconstrained Output Ports      ; 13    ; 13   ;
+; Unconstrained Output Port Paths ; 26    ; 26   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri May 13 10:27:10 2016
+Info: Command: quartus_sta Instruction_pointer -c Instruction_pointer
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Instruction_pointer.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.829
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.829       -20.941 clk 
+Info (332146): Worst-case hold slack is 0.523
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.523         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -40.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.291
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.291        -1.676 clk 
+Info (332146): Worst-case hold slack is 0.240
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.240         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -40.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 403 megabytes
+    Info: Processing ended: Fri May 13 10:27:12 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

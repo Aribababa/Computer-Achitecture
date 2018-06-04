@@ -1,0 +1,584 @@
+Simulator report for adder_32bits
+Sun May 15 22:51:59 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 354 nodes    ;
+; Simulation Coverage         ;      55.37 % ;
+; Total Number of Transitions ; 712          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                                                              ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                                                            ; Default Value ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                                                                         ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                                                               ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                                                                ;               ;
+; Vector input source                                                                        ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Carry lookahead adder/adder_32bits.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                                                                 ; On            ;
+; Check outputs                                                                              ; Off                                                                                                                ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                                                                 ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                                                                 ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                                                                 ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                                                                 ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                                                                ; Off           ;
+; Detect glitches                                                                            ; Off                                                                                                                ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                                                                ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                                                                ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                                                                ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                                                                ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                                                                 ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                                                                         ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                                                                ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                                                                ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                                                               ; Auto          ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      55.37 % ;
+; Total nodes checked                                 ; 354          ;
+; Total output ports checked                          ; 354          ;
+; Total output ports with complete 1/0-value coverage ; 196          ;
+; Total output ports with no 1/0-value coverage       ; 67           ;
+; Total output ports with no 1-value coverage         ; 116          ;
+; Total output ports with no 0-value coverage         ; 109          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                            ;
++--------------------------------------------------+--------------------------------------------------+------------------+
+; Node Name                                        ; Output Port Name                                 ; Output Port Type ;
++--------------------------------------------------+--------------------------------------------------+------------------+
+; |adder_32bits|A[3]                               ; |adder_32bits|A[3]                               ; out              ;
+; |adder_32bits|A[4]                               ; |adder_32bits|A[4]                               ; out              ;
+; |adder_32bits|A[5]                               ; |adder_32bits|A[5]                               ; out              ;
+; |adder_32bits|A[8]                               ; |adder_32bits|A[8]                               ; out              ;
+; |adder_32bits|A[10]                              ; |adder_32bits|A[10]                              ; out              ;
+; |adder_32bits|A[11]                              ; |adder_32bits|A[11]                              ; out              ;
+; |adder_32bits|A[13]                              ; |adder_32bits|A[13]                              ; out              ;
+; |adder_32bits|A[14]                              ; |adder_32bits|A[14]                              ; out              ;
+; |adder_32bits|A[18]                              ; |adder_32bits|A[18]                              ; out              ;
+; |adder_32bits|A[19]                              ; |adder_32bits|A[19]                              ; out              ;
+; |adder_32bits|A[20]                              ; |adder_32bits|A[20]                              ; out              ;
+; |adder_32bits|A[22]                              ; |adder_32bits|A[22]                              ; out              ;
+; |adder_32bits|A[24]                              ; |adder_32bits|A[24]                              ; out              ;
+; |adder_32bits|A[26]                              ; |adder_32bits|A[26]                              ; out              ;
+; |adder_32bits|A[28]                              ; |adder_32bits|A[28]                              ; out              ;
+; |adder_32bits|A[29]                              ; |adder_32bits|A[29]                              ; out              ;
+; |adder_32bits|A[30]                              ; |adder_32bits|A[30]                              ; out              ;
+; |adder_32bits|A[31]                              ; |adder_32bits|A[31]                              ; out              ;
+; |adder_32bits|B[0]                               ; |adder_32bits|B[0]                               ; out              ;
+; |adder_32bits|B[2]                               ; |adder_32bits|B[2]                               ; out              ;
+; |adder_32bits|B[3]                               ; |adder_32bits|B[3]                               ; out              ;
+; |adder_32bits|B[6]                               ; |adder_32bits|B[6]                               ; out              ;
+; |adder_32bits|B[7]                               ; |adder_32bits|B[7]                               ; out              ;
+; |adder_32bits|B[8]                               ; |adder_32bits|B[8]                               ; out              ;
+; |adder_32bits|B[10]                              ; |adder_32bits|B[10]                              ; out              ;
+; |adder_32bits|B[12]                              ; |adder_32bits|B[12]                              ; out              ;
+; |adder_32bits|B[14]                              ; |adder_32bits|B[14]                              ; out              ;
+; |adder_32bits|B[15]                              ; |adder_32bits|B[15]                              ; out              ;
+; |adder_32bits|B[17]                              ; |adder_32bits|B[17]                              ; out              ;
+; |adder_32bits|B[18]                              ; |adder_32bits|B[18]                              ; out              ;
+; |adder_32bits|B[19]                              ; |adder_32bits|B[19]                              ; out              ;
+; |adder_32bits|B[21]                              ; |adder_32bits|B[21]                              ; out              ;
+; |adder_32bits|B[24]                              ; |adder_32bits|B[24]                              ; out              ;
+; |adder_32bits|B[29]                              ; |adder_32bits|B[29]                              ; out              ;
+; |adder_32bits|salida[1]                          ; |adder_32bits|salida[1]                          ; pin_out          ;
+; |adder_32bits|salida[4]                          ; |adder_32bits|salida[4]                          ; pin_out          ;
+; |adder_32bits|salida[5]                          ; |adder_32bits|salida[5]                          ; pin_out          ;
+; |adder_32bits|salida[6]                          ; |adder_32bits|salida[6]                          ; pin_out          ;
+; |adder_32bits|salida[7]                          ; |adder_32bits|salida[7]                          ; pin_out          ;
+; |adder_32bits|salida[8]                          ; |adder_32bits|salida[8]                          ; pin_out          ;
+; |adder_32bits|salida[9]                          ; |adder_32bits|salida[9]                          ; pin_out          ;
+; |adder_32bits|salida[10]                         ; |adder_32bits|salida[10]                         ; pin_out          ;
+; |adder_32bits|salida[11]                         ; |adder_32bits|salida[11]                         ; pin_out          ;
+; |adder_32bits|salida[12]                         ; |adder_32bits|salida[12]                         ; pin_out          ;
+; |adder_32bits|salida[13]                         ; |adder_32bits|salida[13]                         ; pin_out          ;
+; |adder_32bits|salida[14]                         ; |adder_32bits|salida[14]                         ; pin_out          ;
+; |adder_32bits|salida[15]                         ; |adder_32bits|salida[15]                         ; pin_out          ;
+; |adder_32bits|salida[16]                         ; |adder_32bits|salida[16]                         ; pin_out          ;
+; |adder_32bits|salida[17]                         ; |adder_32bits|salida[17]                         ; pin_out          ;
+; |adder_32bits|salida[18]                         ; |adder_32bits|salida[18]                         ; pin_out          ;
+; |adder_32bits|salida[19]                         ; |adder_32bits|salida[19]                         ; pin_out          ;
+; |adder_32bits|salida[20]                         ; |adder_32bits|salida[20]                         ; pin_out          ;
+; |adder_32bits|salida[21]                         ; |adder_32bits|salida[21]                         ; pin_out          ;
+; |adder_32bits|salida[22]                         ; |adder_32bits|salida[22]                         ; pin_out          ;
+; |adder_32bits|salida[23]                         ; |adder_32bits|salida[23]                         ; pin_out          ;
+; |adder_32bits|salida[26]                         ; |adder_32bits|salida[26]                         ; pin_out          ;
+; |adder_32bits|salida[27]                         ; |adder_32bits|salida[27]                         ; pin_out          ;
+; |adder_32bits|salida[28]                         ; |adder_32bits|salida[28]                         ; pin_out          ;
+; |adder_32bits|salida[29]                         ; |adder_32bits|salida[29]                         ; pin_out          ;
+; |adder_32bits|salida[30]                         ; |adder_32bits|salida[30]                         ; pin_out          ;
+; |adder_32bits|salida[31]                         ; |adder_32bits|salida[31]                         ; pin_out          ;
+; |adder_32bits|overFlow                           ; |adder_32bits|overFlow                           ; pin_out          ;
+; |adder_32bits|carryLookaheadAdder:Adder08|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder08|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|G[3]   ; |adder_32bits|carryLookaheadAdder:Adder08|G[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|P[1]   ; |adder_32bits|carryLookaheadAdder:Adder08|P[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|P[2]   ; |adder_32bits|carryLookaheadAdder:Adder08|P[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder08|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C[1]   ; |adder_32bits|carryLookaheadAdder:Adder08|C[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C[2]   ; |adder_32bits|carryLookaheadAdder:Adder08|C[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~2    ; |adder_32bits|carryLookaheadAdder:Adder08|C~2    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~5    ; |adder_32bits|carryLookaheadAdder:Adder08|C~5    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~6    ; |adder_32bits|carryLookaheadAdder:Adder08|C~6    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~7    ; |adder_32bits|carryLookaheadAdder:Adder08|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~8    ; |adder_32bits|carryLookaheadAdder:Adder08|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C[3]   ; |adder_32bits|carryLookaheadAdder:Adder08|C[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder08|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout~1 ; |adder_32bits|carryLookaheadAdder:Adder08|cout~1 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout~3 ; |adder_32bits|carryLookaheadAdder:Adder08|cout~3 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout~5 ; |adder_32bits|carryLookaheadAdder:Adder08|cout~5 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder08|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout   ; |adder_32bits|carryLookaheadAdder:Adder08|cout   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|sum[0] ; |adder_32bits|carryLookaheadAdder:Adder08|sum[0] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|sum[1] ; |adder_32bits|carryLookaheadAdder:Adder08|sum[1] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|sum[2] ; |adder_32bits|carryLookaheadAdder:Adder08|sum[2] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|sum[3] ; |adder_32bits|carryLookaheadAdder:Adder08|sum[3] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|G[0]   ; |adder_32bits|carryLookaheadAdder:Adder07|G[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder07|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|P[1]   ; |adder_32bits|carryLookaheadAdder:Adder07|P[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|P[2]   ; |adder_32bits|carryLookaheadAdder:Adder07|P[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder07|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C[1]   ; |adder_32bits|carryLookaheadAdder:Adder07|C[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~2    ; |adder_32bits|carryLookaheadAdder:Adder07|C~2    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~3    ; |adder_32bits|carryLookaheadAdder:Adder07|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~5    ; |adder_32bits|carryLookaheadAdder:Adder07|C~5    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C[3]   ; |adder_32bits|carryLookaheadAdder:Adder07|C[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|sum[2] ; |adder_32bits|carryLookaheadAdder:Adder07|sum[2] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|sum[3] ; |adder_32bits|carryLookaheadAdder:Adder07|sum[3] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|G[0]   ; |adder_32bits|carryLookaheadAdder:Adder06|G[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|G[3]   ; |adder_32bits|carryLookaheadAdder:Adder06|G[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|P[0]   ; |adder_32bits|carryLookaheadAdder:Adder06|P[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|P[1]   ; |adder_32bits|carryLookaheadAdder:Adder06|P[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder06|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C[1]   ; |adder_32bits|carryLookaheadAdder:Adder06|C[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C[2]   ; |adder_32bits|carryLookaheadAdder:Adder06|C[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~6    ; |adder_32bits|carryLookaheadAdder:Adder06|C~6    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~7    ; |adder_32bits|carryLookaheadAdder:Adder06|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~8    ; |adder_32bits|carryLookaheadAdder:Adder06|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C[3]   ; |adder_32bits|carryLookaheadAdder:Adder06|C[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~1 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~1 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|sum[0] ; |adder_32bits|carryLookaheadAdder:Adder06|sum[0] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|sum[1] ; |adder_32bits|carryLookaheadAdder:Adder06|sum[1] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|sum[2] ; |adder_32bits|carryLookaheadAdder:Adder06|sum[2] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|sum[3] ; |adder_32bits|carryLookaheadAdder:Adder06|sum[3] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder05|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|P[0]   ; |adder_32bits|carryLookaheadAdder:Adder05|P[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~0    ; |adder_32bits|carryLookaheadAdder:Adder05|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C[2]   ; |adder_32bits|carryLookaheadAdder:Adder05|C[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~2    ; |adder_32bits|carryLookaheadAdder:Adder05|C~2    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~5    ; |adder_32bits|carryLookaheadAdder:Adder05|C~5    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~6    ; |adder_32bits|carryLookaheadAdder:Adder05|C~6    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~7    ; |adder_32bits|carryLookaheadAdder:Adder05|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C[3]   ; |adder_32bits|carryLookaheadAdder:Adder05|C[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~1 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~1 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~3 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~3 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~5 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~5 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout   ; |adder_32bits|carryLookaheadAdder:Adder05|cout   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|sum[0] ; |adder_32bits|carryLookaheadAdder:Adder05|sum[0] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|sum[1] ; |adder_32bits|carryLookaheadAdder:Adder05|sum[1] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|sum[2] ; |adder_32bits|carryLookaheadAdder:Adder05|sum[2] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|sum[3] ; |adder_32bits|carryLookaheadAdder:Adder05|sum[3] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|G[0]   ; |adder_32bits|carryLookaheadAdder:Adder04|G[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|G[3]   ; |adder_32bits|carryLookaheadAdder:Adder04|G[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|P[0]   ; |adder_32bits|carryLookaheadAdder:Adder04|P[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder04|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C[1]   ; |adder_32bits|carryLookaheadAdder:Adder04|C[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C~0    ; |adder_32bits|carryLookaheadAdder:Adder04|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C[2]   ; |adder_32bits|carryLookaheadAdder:Adder04|C[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C~1    ; |adder_32bits|carryLookaheadAdder:Adder04|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C~2    ; |adder_32bits|carryLookaheadAdder:Adder04|C~2    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C~5    ; |adder_32bits|carryLookaheadAdder:Adder04|C~5    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C~6    ; |adder_32bits|carryLookaheadAdder:Adder04|C~6    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C~7    ; |adder_32bits|carryLookaheadAdder:Adder04|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C~8    ; |adder_32bits|carryLookaheadAdder:Adder04|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout~1 ; |adder_32bits|carryLookaheadAdder:Adder04|cout~1 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder04|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout~5 ; |adder_32bits|carryLookaheadAdder:Adder04|cout~5 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder04|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|sum[0] ; |adder_32bits|carryLookaheadAdder:Adder04|sum[0] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|sum[1] ; |adder_32bits|carryLookaheadAdder:Adder04|sum[1] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|sum[2] ; |adder_32bits|carryLookaheadAdder:Adder04|sum[2] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|sum[3] ; |adder_32bits|carryLookaheadAdder:Adder04|sum[3] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|G[0]   ; |adder_32bits|carryLookaheadAdder:Adder03|G[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder03|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|G[3]   ; |adder_32bits|carryLookaheadAdder:Adder03|G[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|P[0]   ; |adder_32bits|carryLookaheadAdder:Adder03|P[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|P[1]   ; |adder_32bits|carryLookaheadAdder:Adder03|P[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|P[2]   ; |adder_32bits|carryLookaheadAdder:Adder03|P[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder03|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C[1]   ; |adder_32bits|carryLookaheadAdder:Adder03|C[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~0    ; |adder_32bits|carryLookaheadAdder:Adder03|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C[2]   ; |adder_32bits|carryLookaheadAdder:Adder03|C[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~2    ; |adder_32bits|carryLookaheadAdder:Adder03|C~2    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~3    ; |adder_32bits|carryLookaheadAdder:Adder03|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~5    ; |adder_32bits|carryLookaheadAdder:Adder03|C~5    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C[3]   ; |adder_32bits|carryLookaheadAdder:Adder03|C[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~1 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~1 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~3 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~3 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~5 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~5 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout   ; |adder_32bits|carryLookaheadAdder:Adder03|cout   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|sum[0] ; |adder_32bits|carryLookaheadAdder:Adder03|sum[0] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|sum[1] ; |adder_32bits|carryLookaheadAdder:Adder03|sum[1] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|sum[2] ; |adder_32bits|carryLookaheadAdder:Adder03|sum[2] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|sum[3] ; |adder_32bits|carryLookaheadAdder:Adder03|sum[3] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|G[0]   ; |adder_32bits|carryLookaheadAdder:Adder02|G[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|P[0]   ; |adder_32bits|carryLookaheadAdder:Adder02|P[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|P[1]   ; |adder_32bits|carryLookaheadAdder:Adder02|P[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|P[2]   ; |adder_32bits|carryLookaheadAdder:Adder02|P[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder02|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C[1]   ; |adder_32bits|carryLookaheadAdder:Adder02|C[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C[2]   ; |adder_32bits|carryLookaheadAdder:Adder02|C[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~6    ; |adder_32bits|carryLookaheadAdder:Adder02|C~6    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~7    ; |adder_32bits|carryLookaheadAdder:Adder02|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|sum[0] ; |adder_32bits|carryLookaheadAdder:Adder02|sum[0] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|sum[1] ; |adder_32bits|carryLookaheadAdder:Adder02|sum[1] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|sum[2] ; |adder_32bits|carryLookaheadAdder:Adder02|sum[2] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|sum[3] ; |adder_32bits|carryLookaheadAdder:Adder02|sum[3] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|G[0]   ; |adder_32bits|carryLookaheadAdder:Adder01|G[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|G[3]   ; |adder_32bits|carryLookaheadAdder:Adder01|G[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C[1]   ; |adder_32bits|carryLookaheadAdder:Adder01|C[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~1 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~1 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~3 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~3 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~5 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~5 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout   ; |adder_32bits|carryLookaheadAdder:Adder01|cout   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|sum[1] ; |adder_32bits|carryLookaheadAdder:Adder01|sum[1] ; out0             ;
++--------------------------------------------------+--------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                               ;
++--------------------------------------------------+--------------------------------------------------+------------------+
+; Node Name                                        ; Output Port Name                                 ; Output Port Type ;
++--------------------------------------------------+--------------------------------------------------+------------------+
+; |adder_32bits|A[0]                               ; |adder_32bits|A[0]                               ; out              ;
+; |adder_32bits|A[1]                               ; |adder_32bits|A[1]                               ; out              ;
+; |adder_32bits|A[2]                               ; |adder_32bits|A[2]                               ; out              ;
+; |adder_32bits|A[6]                               ; |adder_32bits|A[6]                               ; out              ;
+; |adder_32bits|A[15]                              ; |adder_32bits|A[15]                              ; out              ;
+; |adder_32bits|A[17]                              ; |adder_32bits|A[17]                              ; out              ;
+; |adder_32bits|A[21]                              ; |adder_32bits|A[21]                              ; out              ;
+; |adder_32bits|B[1]                               ; |adder_32bits|B[1]                               ; out              ;
+; |adder_32bits|B[5]                               ; |adder_32bits|B[5]                               ; out              ;
+; |adder_32bits|B[11]                              ; |adder_32bits|B[11]                              ; out              ;
+; |adder_32bits|B[13]                              ; |adder_32bits|B[13]                              ; out              ;
+; |adder_32bits|B[20]                              ; |adder_32bits|B[20]                              ; out              ;
+; |adder_32bits|B[22]                              ; |adder_32bits|B[22]                              ; out              ;
+; |adder_32bits|B[23]                              ; |adder_32bits|B[23]                              ; out              ;
+; |adder_32bits|B[26]                              ; |adder_32bits|B[26]                              ; out              ;
+; |adder_32bits|B[28]                              ; |adder_32bits|B[28]                              ; out              ;
+; |adder_32bits|B[31]                              ; |adder_32bits|B[31]                              ; out              ;
+; |adder_32bits|salida[0]                          ; |adder_32bits|salida[0]                          ; pin_out          ;
+; |adder_32bits|salida[3]                          ; |adder_32bits|salida[3]                          ; pin_out          ;
+; |adder_32bits|salida[24]                         ; |adder_32bits|salida[24]                         ; pin_out          ;
+; |adder_32bits|salida[25]                         ; |adder_32bits|salida[25]                         ; pin_out          ;
+; |adder_32bits|carryIn                            ; |adder_32bits|carryIn                            ; out              ;
+; |adder_32bits|carryLookaheadAdder:Adder08|G[0]   ; |adder_32bits|carryLookaheadAdder:Adder08|G[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder08|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|P[0]   ; |adder_32bits|carryLookaheadAdder:Adder08|P[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~0    ; |adder_32bits|carryLookaheadAdder:Adder08|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~1    ; |adder_32bits|carryLookaheadAdder:Adder08|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~3    ; |adder_32bits|carryLookaheadAdder:Adder08|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~4    ; |adder_32bits|carryLookaheadAdder:Adder08|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder08|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder08|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|P[0]   ; |adder_32bits|carryLookaheadAdder:Adder07|P[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~1    ; |adder_32bits|carryLookaheadAdder:Adder07|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~4    ; |adder_32bits|carryLookaheadAdder:Adder07|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~6    ; |adder_32bits|carryLookaheadAdder:Adder07|C~6    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~7    ; |adder_32bits|carryLookaheadAdder:Adder07|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~8    ; |adder_32bits|carryLookaheadAdder:Adder07|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|sum[0] ; |adder_32bits|carryLookaheadAdder:Adder07|sum[0] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|sum[1] ; |adder_32bits|carryLookaheadAdder:Adder07|sum[1] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder06|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder06|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|P[2]   ; |adder_32bits|carryLookaheadAdder:Adder06|P[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~0    ; |adder_32bits|carryLookaheadAdder:Adder06|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~1    ; |adder_32bits|carryLookaheadAdder:Adder06|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~2    ; |adder_32bits|carryLookaheadAdder:Adder06|C~2    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~3    ; |adder_32bits|carryLookaheadAdder:Adder06|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~4    ; |adder_32bits|carryLookaheadAdder:Adder06|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~5    ; |adder_32bits|carryLookaheadAdder:Adder06|C~5    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~3 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~3 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~5 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~5 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout   ; |adder_32bits|carryLookaheadAdder:Adder06|cout   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder05|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|G[3]   ; |adder_32bits|carryLookaheadAdder:Adder05|G[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|P[2]   ; |adder_32bits|carryLookaheadAdder:Adder05|P[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder05|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~1    ; |adder_32bits|carryLookaheadAdder:Adder05|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~4    ; |adder_32bits|carryLookaheadAdder:Adder05|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~8    ; |adder_32bits|carryLookaheadAdder:Adder05|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder04|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder04|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder04|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout~3 ; |adder_32bits|carryLookaheadAdder:Adder04|cout~3 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout   ; |adder_32bits|carryLookaheadAdder:Adder04|cout   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~4    ; |adder_32bits|carryLookaheadAdder:Adder03|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~7    ; |adder_32bits|carryLookaheadAdder:Adder03|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~8    ; |adder_32bits|carryLookaheadAdder:Adder03|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder02|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder02|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~0    ; |adder_32bits|carryLookaheadAdder:Adder02|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~1    ; |adder_32bits|carryLookaheadAdder:Adder02|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~2    ; |adder_32bits|carryLookaheadAdder:Adder02|C~2    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~3    ; |adder_32bits|carryLookaheadAdder:Adder02|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~4    ; |adder_32bits|carryLookaheadAdder:Adder02|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~5    ; |adder_32bits|carryLookaheadAdder:Adder02|C~5    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~8    ; |adder_32bits|carryLookaheadAdder:Adder02|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C[3]   ; |adder_32bits|carryLookaheadAdder:Adder02|C[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder01|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder01|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|P[0]   ; |adder_32bits|carryLookaheadAdder:Adder01|P[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|P[1]   ; |adder_32bits|carryLookaheadAdder:Adder01|P[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder01|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~0    ; |adder_32bits|carryLookaheadAdder:Adder01|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C[2]   ; |adder_32bits|carryLookaheadAdder:Adder01|C[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~1    ; |adder_32bits|carryLookaheadAdder:Adder01|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~2    ; |adder_32bits|carryLookaheadAdder:Adder01|C~2    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~3    ; |adder_32bits|carryLookaheadAdder:Adder01|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~4    ; |adder_32bits|carryLookaheadAdder:Adder01|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~5    ; |adder_32bits|carryLookaheadAdder:Adder01|C~5    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~6    ; |adder_32bits|carryLookaheadAdder:Adder01|C~6    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~7    ; |adder_32bits|carryLookaheadAdder:Adder01|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~8    ; |adder_32bits|carryLookaheadAdder:Adder01|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C[3]   ; |adder_32bits|carryLookaheadAdder:Adder01|C[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|sum[0] ; |adder_32bits|carryLookaheadAdder:Adder01|sum[0] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|sum[3] ; |adder_32bits|carryLookaheadAdder:Adder01|sum[3] ; out0             ;
++--------------------------------------------------+--------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                               ;
++--------------------------------------------------+--------------------------------------------------+------------------+
+; Node Name                                        ; Output Port Name                                 ; Output Port Type ;
++--------------------------------------------------+--------------------------------------------------+------------------+
+; |adder_32bits|A[7]                               ; |adder_32bits|A[7]                               ; out              ;
+; |adder_32bits|A[9]                               ; |adder_32bits|A[9]                               ; out              ;
+; |adder_32bits|A[12]                              ; |adder_32bits|A[12]                              ; out              ;
+; |adder_32bits|A[16]                              ; |adder_32bits|A[16]                              ; out              ;
+; |adder_32bits|A[23]                              ; |adder_32bits|A[23]                              ; out              ;
+; |adder_32bits|A[25]                              ; |adder_32bits|A[25]                              ; out              ;
+; |adder_32bits|A[27]                              ; |adder_32bits|A[27]                              ; out              ;
+; |adder_32bits|B[1]                               ; |adder_32bits|B[1]                               ; out              ;
+; |adder_32bits|B[4]                               ; |adder_32bits|B[4]                               ; out              ;
+; |adder_32bits|B[9]                               ; |adder_32bits|B[9]                               ; out              ;
+; |adder_32bits|B[11]                              ; |adder_32bits|B[11]                              ; out              ;
+; |adder_32bits|B[16]                              ; |adder_32bits|B[16]                              ; out              ;
+; |adder_32bits|B[25]                              ; |adder_32bits|B[25]                              ; out              ;
+; |adder_32bits|B[26]                              ; |adder_32bits|B[26]                              ; out              ;
+; |adder_32bits|B[27]                              ; |adder_32bits|B[27]                              ; out              ;
+; |adder_32bits|B[30]                              ; |adder_32bits|B[30]                              ; out              ;
+; |adder_32bits|salida[0]                          ; |adder_32bits|salida[0]                          ; pin_out          ;
+; |adder_32bits|salida[2]                          ; |adder_32bits|salida[2]                          ; pin_out          ;
+; |adder_32bits|carryIn                            ; |adder_32bits|carryIn                            ; out              ;
+; |adder_32bits|carryLookaheadAdder:Adder08|G[0]   ; |adder_32bits|carryLookaheadAdder:Adder08|G[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder08|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~0    ; |adder_32bits|carryLookaheadAdder:Adder08|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~1    ; |adder_32bits|carryLookaheadAdder:Adder08|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~3    ; |adder_32bits|carryLookaheadAdder:Adder08|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|C~4    ; |adder_32bits|carryLookaheadAdder:Adder08|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder08|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder08|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder08|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder07|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|G[3]   ; |adder_32bits|carryLookaheadAdder:Adder07|G[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|P[0]   ; |adder_32bits|carryLookaheadAdder:Adder07|P[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~0    ; |adder_32bits|carryLookaheadAdder:Adder07|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C[2]   ; |adder_32bits|carryLookaheadAdder:Adder07|C[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~1    ; |adder_32bits|carryLookaheadAdder:Adder07|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~4    ; |adder_32bits|carryLookaheadAdder:Adder07|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~6    ; |adder_32bits|carryLookaheadAdder:Adder07|C~6    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~7    ; |adder_32bits|carryLookaheadAdder:Adder07|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|C~8    ; |adder_32bits|carryLookaheadAdder:Adder07|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~1 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~1 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~3 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~3 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~5 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~5 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder07|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder07|cout   ; |adder_32bits|carryLookaheadAdder:Adder07|cout   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder06|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~3    ; |adder_32bits|carryLookaheadAdder:Adder06|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|C~4    ; |adder_32bits|carryLookaheadAdder:Adder06|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder06|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder06|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|G[0]   ; |adder_32bits|carryLookaheadAdder:Adder05|G[0]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|G[3]   ; |adder_32bits|carryLookaheadAdder:Adder05|G[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|P[1]   ; |adder_32bits|carryLookaheadAdder:Adder05|P[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|P[2]   ; |adder_32bits|carryLookaheadAdder:Adder05|P[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder05|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C[1]   ; |adder_32bits|carryLookaheadAdder:Adder05|C[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~1    ; |adder_32bits|carryLookaheadAdder:Adder05|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~3    ; |adder_32bits|carryLookaheadAdder:Adder05|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~4    ; |adder_32bits|carryLookaheadAdder:Adder05|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|C~8    ; |adder_32bits|carryLookaheadAdder:Adder05|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder05|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder05|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder04|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|P[1]   ; |adder_32bits|carryLookaheadAdder:Adder04|P[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|P[2]   ; |adder_32bits|carryLookaheadAdder:Adder04|P[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C~3    ; |adder_32bits|carryLookaheadAdder:Adder04|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C~4    ; |adder_32bits|carryLookaheadAdder:Adder04|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|C[3]   ; |adder_32bits|carryLookaheadAdder:Adder04|C[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder04|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder04|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder04|cout   ; |adder_32bits|carryLookaheadAdder:Adder04|cout   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder03|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~1    ; |adder_32bits|carryLookaheadAdder:Adder03|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~4    ; |adder_32bits|carryLookaheadAdder:Adder03|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~6    ; |adder_32bits|carryLookaheadAdder:Adder03|C~6    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~7    ; |adder_32bits|carryLookaheadAdder:Adder03|C~7    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|C~8    ; |adder_32bits|carryLookaheadAdder:Adder03|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder03|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder03|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|G[2]   ; |adder_32bits|carryLookaheadAdder:Adder02|G[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|G[3]   ; |adder_32bits|carryLookaheadAdder:Adder02|G[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~3    ; |adder_32bits|carryLookaheadAdder:Adder02|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~4    ; |adder_32bits|carryLookaheadAdder:Adder02|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|C~8    ; |adder_32bits|carryLookaheadAdder:Adder02|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~1 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~1 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~3 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~3 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~5 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~5 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder02|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder02|cout   ; |adder_32bits|carryLookaheadAdder:Adder02|cout   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|G[1]   ; |adder_32bits|carryLookaheadAdder:Adder01|G[1]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|P[2]   ; |adder_32bits|carryLookaheadAdder:Adder01|P[2]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|P[3]   ; |adder_32bits|carryLookaheadAdder:Adder01|P[3]   ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~0    ; |adder_32bits|carryLookaheadAdder:Adder01|C~0    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~1    ; |adder_32bits|carryLookaheadAdder:Adder01|C~1    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~3    ; |adder_32bits|carryLookaheadAdder:Adder01|C~3    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~4    ; |adder_32bits|carryLookaheadAdder:Adder01|C~4    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|C~8    ; |adder_32bits|carryLookaheadAdder:Adder01|C~8    ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~0 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~0 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~2 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~2 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~4 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~4 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|cout~6 ; |adder_32bits|carryLookaheadAdder:Adder01|cout~6 ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|sum[0] ; |adder_32bits|carryLookaheadAdder:Adder01|sum[0] ; out0             ;
+; |adder_32bits|carryLookaheadAdder:Adder01|sum[2] ; |adder_32bits|carryLookaheadAdder:Adder01|sum[2] ; out0             ;
++--------------------------------------------------+--------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun May 15 22:51:59 2016
+Info: Command: quartus_sim --simulation_results_format=VWF adder_32bits -c adder_32bits
+Info (324025): Using vector source file "C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Carry lookahead adder/adder_32bits.vwf"
+Warning (328012): Can't find signal in vector source file for input pin "|adder_32bits|carryIn"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      55.37 %
+Info (328052): Number of transitions in simulation is 712
+Info (324045): Vector file adder_32bits.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 318 megabytes
+    Info: Processing ended: Sun May 15 22:51:59 2016
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

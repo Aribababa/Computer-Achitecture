@@ -1,0 +1,432 @@
+Simulator report for Instruction_pointer
+Mon May 16 09:31:23 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 178 nodes    ;
+; Simulation Coverage         ;      23.27 % ;
+; Total Number of Transitions ; 286          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                                                                 ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                                                                              ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                                                                    ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                                                                     ;               ;
+; Vector input source                                                                        ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Instruction pointer/Instruction_pointer.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                                                                      ; On            ;
+; Check outputs                                                                              ; Off                                                                                                                     ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                                                                      ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                                                                      ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                                                                      ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                                                                      ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                                                                     ; Off           ;
+; Detect glitches                                                                            ; Off                                                                                                                     ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                                                                     ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                                                                     ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                                                                     ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                                                                     ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                                                                      ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                                                                              ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                                                                     ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                                                                     ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                                                                    ; Auto          ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      23.27 % ;
+; Total nodes checked                                 ; 178          ;
+; Total output ports checked                          ; 159          ;
+; Total output ports with complete 1/0-value coverage ; 37           ;
+; Total output ports with no 1/0-value coverage       ; 95           ;
+; Total output ports with no 1-value coverage         ; 115          ;
+; Total output ports with no 0-value coverage         ; 102          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                            ;
++------------------------------------------+------------------------------------------+------------------+
+; Node Name                                ; Output Port Name                         ; Output Port Type ;
++------------------------------------------+------------------------------------------+------------------+
+; |Instruction_pointer|instruccion[1]~0    ; |Instruction_pointer|instruccion[1]~0    ; out              ;
+; |Instruction_pointer|instruccion[1]~en   ; |Instruction_pointer|instruccion[1]~en   ; regout           ;
+; |Instruction_pointer|instruccion[1]~1    ; |Instruction_pointer|instruccion[1]~1    ; out0             ;
+; |Instruction_pointer|instruccion[0]~2    ; |Instruction_pointer|instruccion[0]~2    ; out              ;
+; |Instruction_pointer|instruccion[0]~en   ; |Instruction_pointer|instruccion[0]~en   ; regout           ;
+; |Instruction_pointer|instruccion[0]~reg0 ; |Instruction_pointer|instruccion[0]~reg0 ; regout           ;
+; |Instruction_pointer|current_ip~11       ; |Instruction_pointer|current_ip~11       ; out              ;
+; |Instruction_pointer|current_ip~12       ; |Instruction_pointer|current_ip~12       ; out              ;
+; |Instruction_pointer|current_ip~24       ; |Instruction_pointer|current_ip~24       ; out              ;
+; |Instruction_pointer|current_ip~25       ; |Instruction_pointer|current_ip~25       ; out              ;
+; |Instruction_pointer|current_ip~37       ; |Instruction_pointer|current_ip~37       ; out              ;
+; |Instruction_pointer|current_ip~38       ; |Instruction_pointer|current_ip~38       ; out              ;
+; |Instruction_pointer|current_ip~50       ; |Instruction_pointer|current_ip~50       ; out              ;
+; |Instruction_pointer|current_ip~51       ; |Instruction_pointer|current_ip~51       ; out              ;
+; |Instruction_pointer|current_ip[0]       ; |Instruction_pointer|current_ip[0]       ; regout           ;
+; |Instruction_pointer|instruccion[1]~reg0 ; |Instruction_pointer|instruccion[1]~reg0 ; regout           ;
+; |Instruction_pointer|instruccion[2]~en   ; |Instruction_pointer|instruccion[2]~en   ; regout           ;
+; |Instruction_pointer|instruccion[3]~en   ; |Instruction_pointer|instruccion[3]~en   ; regout           ;
+; |Instruction_pointer|instruccion[4]~en   ; |Instruction_pointer|instruccion[4]~en   ; regout           ;
+; |Instruction_pointer|instruccion[5]~en   ; |Instruction_pointer|instruccion[5]~en   ; regout           ;
+; |Instruction_pointer|instruccion[5]~6    ; |Instruction_pointer|instruccion[5]~6    ; out              ;
+; |Instruction_pointer|instruccion[6]~en   ; |Instruction_pointer|instruccion[6]~en   ; regout           ;
+; |Instruction_pointer|instruccion[7]~en   ; |Instruction_pointer|instruccion[7]~en   ; regout           ;
+; |Instruction_pointer|instruccion[8]~en   ; |Instruction_pointer|instruccion[8]~en   ; regout           ;
+; |Instruction_pointer|instruccion[9]~en   ; |Instruction_pointer|instruccion[9]~en   ; regout           ;
+; |Instruction_pointer|instruccion[10]~en  ; |Instruction_pointer|instruccion[10]~en  ; regout           ;
+; |Instruction_pointer|instruccion[11]~en  ; |Instruction_pointer|instruccion[11]~en  ; regout           ;
+; |Instruction_pointer|instruccion[12]~en  ; |Instruction_pointer|instruccion[12]~en  ; regout           ;
+; |Instruction_pointer|current_ip[1]       ; |Instruction_pointer|current_ip[1]       ; regout           ;
+; |Instruction_pointer|clk                 ; |Instruction_pointer|clk                 ; out              ;
+; |Instruction_pointer|load_ip             ; |Instruction_pointer|load_ip             ; out              ;
+; |Instruction_pointer|get_ip              ; |Instruction_pointer|get_ip              ; out              ;
+; |Instruction_pointer|inc_ip              ; |Instruction_pointer|inc_ip              ; out              ;
+; |Instruction_pointer|instruccion[0]      ; |Instruction_pointer|instruccion[0]      ; pin_out          ;
+; |Instruction_pointer|instruccion[1]      ; |Instruction_pointer|instruccion[1]      ; pin_out          ;
+; |Instruction_pointer|instruccion[5]      ; |Instruction_pointer|instruccion[5]      ; pin_out          ;
+; |Instruction_pointer|Add0~0              ; |Instruction_pointer|Add0~0              ; out0             ;
++------------------------------------------+------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                 ;
++-------------------------------------------+-------------------------------------------+------------------+
+; Node Name                                 ; Output Port Name                          ; Output Port Type ;
++-------------------------------------------+-------------------------------------------+------------------+
+; |Instruction_pointer|current_ip~0         ; |Instruction_pointer|current_ip~0         ; out              ;
+; |Instruction_pointer|current_ip~1         ; |Instruction_pointer|current_ip~1         ; out              ;
+; |Instruction_pointer|current_ip~2         ; |Instruction_pointer|current_ip~2         ; out              ;
+; |Instruction_pointer|current_ip~3         ; |Instruction_pointer|current_ip~3         ; out              ;
+; |Instruction_pointer|current_ip~4         ; |Instruction_pointer|current_ip~4         ; out              ;
+; |Instruction_pointer|current_ip~5         ; |Instruction_pointer|current_ip~5         ; out              ;
+; |Instruction_pointer|current_ip~6         ; |Instruction_pointer|current_ip~6         ; out              ;
+; |Instruction_pointer|current_ip~8         ; |Instruction_pointer|current_ip~8         ; out              ;
+; |Instruction_pointer|current_ip~9         ; |Instruction_pointer|current_ip~9         ; out              ;
+; |Instruction_pointer|current_ip~10        ; |Instruction_pointer|current_ip~10        ; out              ;
+; |Instruction_pointer|current_ip~13        ; |Instruction_pointer|current_ip~13        ; out              ;
+; |Instruction_pointer|current_ip~14        ; |Instruction_pointer|current_ip~14        ; out              ;
+; |Instruction_pointer|current_ip~15        ; |Instruction_pointer|current_ip~15        ; out              ;
+; |Instruction_pointer|current_ip~16        ; |Instruction_pointer|current_ip~16        ; out              ;
+; |Instruction_pointer|current_ip~17        ; |Instruction_pointer|current_ip~17        ; out              ;
+; |Instruction_pointer|current_ip~18        ; |Instruction_pointer|current_ip~18        ; out              ;
+; |Instruction_pointer|current_ip~19        ; |Instruction_pointer|current_ip~19        ; out              ;
+; |Instruction_pointer|current_ip~21        ; |Instruction_pointer|current_ip~21        ; out              ;
+; |Instruction_pointer|current_ip~22        ; |Instruction_pointer|current_ip~22        ; out              ;
+; |Instruction_pointer|current_ip~23        ; |Instruction_pointer|current_ip~23        ; out              ;
+; |Instruction_pointer|current_ip~26        ; |Instruction_pointer|current_ip~26        ; out              ;
+; |Instruction_pointer|current_ip~27        ; |Instruction_pointer|current_ip~27        ; out              ;
+; |Instruction_pointer|current_ip~28        ; |Instruction_pointer|current_ip~28        ; out              ;
+; |Instruction_pointer|current_ip~29        ; |Instruction_pointer|current_ip~29        ; out              ;
+; |Instruction_pointer|current_ip~30        ; |Instruction_pointer|current_ip~30        ; out              ;
+; |Instruction_pointer|current_ip~31        ; |Instruction_pointer|current_ip~31        ; out              ;
+; |Instruction_pointer|current_ip~32        ; |Instruction_pointer|current_ip~32        ; out              ;
+; |Instruction_pointer|current_ip~34        ; |Instruction_pointer|current_ip~34        ; out              ;
+; |Instruction_pointer|current_ip~35        ; |Instruction_pointer|current_ip~35        ; out              ;
+; |Instruction_pointer|current_ip~36        ; |Instruction_pointer|current_ip~36        ; out              ;
+; |Instruction_pointer|current_ip~39        ; |Instruction_pointer|current_ip~39        ; out              ;
+; |Instruction_pointer|current_ip~40        ; |Instruction_pointer|current_ip~40        ; out              ;
+; |Instruction_pointer|current_ip~41        ; |Instruction_pointer|current_ip~41        ; out              ;
+; |Instruction_pointer|current_ip~42        ; |Instruction_pointer|current_ip~42        ; out              ;
+; |Instruction_pointer|current_ip~43        ; |Instruction_pointer|current_ip~43        ; out              ;
+; |Instruction_pointer|current_ip~44        ; |Instruction_pointer|current_ip~44        ; out              ;
+; |Instruction_pointer|current_ip~45        ; |Instruction_pointer|current_ip~45        ; out              ;
+; |Instruction_pointer|current_ip~47        ; |Instruction_pointer|current_ip~47        ; out              ;
+; |Instruction_pointer|current_ip~48        ; |Instruction_pointer|current_ip~48        ; out              ;
+; |Instruction_pointer|current_ip~49        ; |Instruction_pointer|current_ip~49        ; out              ;
+; |Instruction_pointer|instruccion[12]~reg0 ; |Instruction_pointer|instruccion[12]~reg0 ; regout           ;
+; |Instruction_pointer|instruccion[11]~reg0 ; |Instruction_pointer|instruccion[11]~reg0 ; regout           ;
+; |Instruction_pointer|instruccion[10]~reg0 ; |Instruction_pointer|instruccion[10]~reg0 ; regout           ;
+; |Instruction_pointer|instruccion[9]~reg0  ; |Instruction_pointer|instruccion[9]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[8]~reg0  ; |Instruction_pointer|instruccion[8]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[7]~reg0  ; |Instruction_pointer|instruccion[7]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[6]~reg0  ; |Instruction_pointer|instruccion[6]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[4]~reg0  ; |Instruction_pointer|instruccion[4]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[3]~reg0  ; |Instruction_pointer|instruccion[3]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[2]~reg0  ; |Instruction_pointer|instruccion[2]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[2]~3     ; |Instruction_pointer|instruccion[2]~3     ; out              ;
+; |Instruction_pointer|instruccion[3]~4     ; |Instruction_pointer|instruccion[3]~4     ; out              ;
+; |Instruction_pointer|instruccion[4]~5     ; |Instruction_pointer|instruccion[4]~5     ; out              ;
+; |Instruction_pointer|instruccion[6]~7     ; |Instruction_pointer|instruccion[6]~7     ; out              ;
+; |Instruction_pointer|instruccion[7]~8     ; |Instruction_pointer|instruccion[7]~8     ; out              ;
+; |Instruction_pointer|instruccion[8]~9     ; |Instruction_pointer|instruccion[8]~9     ; out              ;
+; |Instruction_pointer|instruccion[9]~10    ; |Instruction_pointer|instruccion[9]~10    ; out              ;
+; |Instruction_pointer|instruccion[10]~11   ; |Instruction_pointer|instruccion[10]~11   ; out              ;
+; |Instruction_pointer|instruccion[11]~12   ; |Instruction_pointer|instruccion[11]~12   ; out              ;
+; |Instruction_pointer|instruccion[12]~13   ; |Instruction_pointer|instruccion[12]~13   ; out              ;
+; |Instruction_pointer|current_ip[2]        ; |Instruction_pointer|current_ip[2]        ; regout           ;
+; |Instruction_pointer|current_ip[3]        ; |Instruction_pointer|current_ip[3]        ; regout           ;
+; |Instruction_pointer|current_ip[4]        ; |Instruction_pointer|current_ip[4]        ; regout           ;
+; |Instruction_pointer|current_ip[6]        ; |Instruction_pointer|current_ip[6]        ; regout           ;
+; |Instruction_pointer|current_ip[7]        ; |Instruction_pointer|current_ip[7]        ; regout           ;
+; |Instruction_pointer|current_ip[8]        ; |Instruction_pointer|current_ip[8]        ; regout           ;
+; |Instruction_pointer|current_ip[9]        ; |Instruction_pointer|current_ip[9]        ; regout           ;
+; |Instruction_pointer|current_ip[10]       ; |Instruction_pointer|current_ip[10]       ; regout           ;
+; |Instruction_pointer|current_ip[11]       ; |Instruction_pointer|current_ip[11]       ; regout           ;
+; |Instruction_pointer|current_ip[12]       ; |Instruction_pointer|current_ip[12]       ; regout           ;
+; |Instruction_pointer|rst_ip               ; |Instruction_pointer|rst_ip               ; out              ;
+; |Instruction_pointer|cargar[0]            ; |Instruction_pointer|cargar[0]            ; out              ;
+; |Instruction_pointer|cargar[1]            ; |Instruction_pointer|cargar[1]            ; out              ;
+; |Instruction_pointer|cargar[2]            ; |Instruction_pointer|cargar[2]            ; out              ;
+; |Instruction_pointer|cargar[3]            ; |Instruction_pointer|cargar[3]            ; out              ;
+; |Instruction_pointer|cargar[4]            ; |Instruction_pointer|cargar[4]            ; out              ;
+; |Instruction_pointer|cargar[5]            ; |Instruction_pointer|cargar[5]            ; out              ;
+; |Instruction_pointer|cargar[6]            ; |Instruction_pointer|cargar[6]            ; out              ;
+; |Instruction_pointer|cargar[7]            ; |Instruction_pointer|cargar[7]            ; out              ;
+; |Instruction_pointer|cargar[8]            ; |Instruction_pointer|cargar[8]            ; out              ;
+; |Instruction_pointer|cargar[9]            ; |Instruction_pointer|cargar[9]            ; out              ;
+; |Instruction_pointer|cargar[10]           ; |Instruction_pointer|cargar[10]           ; out              ;
+; |Instruction_pointer|cargar[11]           ; |Instruction_pointer|cargar[11]           ; out              ;
+; |Instruction_pointer|cargar[12]           ; |Instruction_pointer|cargar[12]           ; out              ;
+; |Instruction_pointer|instruccion[2]       ; |Instruction_pointer|instruccion[2]       ; pin_out          ;
+; |Instruction_pointer|instruccion[3]       ; |Instruction_pointer|instruccion[3]       ; pin_out          ;
+; |Instruction_pointer|instruccion[4]       ; |Instruction_pointer|instruccion[4]       ; pin_out          ;
+; |Instruction_pointer|instruccion[6]       ; |Instruction_pointer|instruccion[6]       ; pin_out          ;
+; |Instruction_pointer|instruccion[7]       ; |Instruction_pointer|instruccion[7]       ; pin_out          ;
+; |Instruction_pointer|instruccion[8]       ; |Instruction_pointer|instruccion[8]       ; pin_out          ;
+; |Instruction_pointer|instruccion[9]       ; |Instruction_pointer|instruccion[9]       ; pin_out          ;
+; |Instruction_pointer|instruccion[10]      ; |Instruction_pointer|instruccion[10]      ; pin_out          ;
+; |Instruction_pointer|instruccion[11]      ; |Instruction_pointer|instruccion[11]      ; pin_out          ;
+; |Instruction_pointer|instruccion[12]      ; |Instruction_pointer|instruccion[12]      ; pin_out          ;
+; |Instruction_pointer|Add0~1               ; |Instruction_pointer|Add0~1               ; out0             ;
+; |Instruction_pointer|Add0~2               ; |Instruction_pointer|Add0~2               ; out0             ;
+; |Instruction_pointer|Add0~3               ; |Instruction_pointer|Add0~3               ; out0             ;
+; |Instruction_pointer|Add0~4               ; |Instruction_pointer|Add0~4               ; out0             ;
+; |Instruction_pointer|Add0~5               ; |Instruction_pointer|Add0~5               ; out0             ;
+; |Instruction_pointer|Add0~6               ; |Instruction_pointer|Add0~6               ; out0             ;
+; |Instruction_pointer|Add0~7               ; |Instruction_pointer|Add0~7               ; out0             ;
+; |Instruction_pointer|Add0~9               ; |Instruction_pointer|Add0~9               ; out0             ;
+; |Instruction_pointer|Add0~10              ; |Instruction_pointer|Add0~10              ; out0             ;
+; |Instruction_pointer|Add0~11              ; |Instruction_pointer|Add0~11              ; out0             ;
+; |Instruction_pointer|Add0~12              ; |Instruction_pointer|Add0~12              ; out0             ;
+; |Instruction_pointer|Add0~13              ; |Instruction_pointer|Add0~13              ; out0             ;
+; |Instruction_pointer|Add0~14              ; |Instruction_pointer|Add0~14              ; out0             ;
+; |Instruction_pointer|Add0~15              ; |Instruction_pointer|Add0~15              ; out0             ;
+; |Instruction_pointer|Add0~16              ; |Instruction_pointer|Add0~16              ; out0             ;
+; |Instruction_pointer|Add0~17              ; |Instruction_pointer|Add0~17              ; out0             ;
+; |Instruction_pointer|Add0~18              ; |Instruction_pointer|Add0~18              ; out0             ;
+; |Instruction_pointer|Add0~19              ; |Instruction_pointer|Add0~19              ; out0             ;
+; |Instruction_pointer|Add0~20              ; |Instruction_pointer|Add0~20              ; out0             ;
+; |Instruction_pointer|Add0~21              ; |Instruction_pointer|Add0~21              ; out0             ;
+; |Instruction_pointer|Add0~22              ; |Instruction_pointer|Add0~22              ; out0             ;
++-------------------------------------------+-------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                 ;
++-------------------------------------------+-------------------------------------------+------------------+
+; Node Name                                 ; Output Port Name                          ; Output Port Type ;
++-------------------------------------------+-------------------------------------------+------------------+
+; |Instruction_pointer|current_ip~0         ; |Instruction_pointer|current_ip~0         ; out              ;
+; |Instruction_pointer|current_ip~1         ; |Instruction_pointer|current_ip~1         ; out              ;
+; |Instruction_pointer|current_ip~2         ; |Instruction_pointer|current_ip~2         ; out              ;
+; |Instruction_pointer|current_ip~3         ; |Instruction_pointer|current_ip~3         ; out              ;
+; |Instruction_pointer|current_ip~4         ; |Instruction_pointer|current_ip~4         ; out              ;
+; |Instruction_pointer|current_ip~5         ; |Instruction_pointer|current_ip~5         ; out              ;
+; |Instruction_pointer|current_ip~6         ; |Instruction_pointer|current_ip~6         ; out              ;
+; |Instruction_pointer|current_ip~7         ; |Instruction_pointer|current_ip~7         ; out              ;
+; |Instruction_pointer|current_ip~8         ; |Instruction_pointer|current_ip~8         ; out              ;
+; |Instruction_pointer|current_ip~9         ; |Instruction_pointer|current_ip~9         ; out              ;
+; |Instruction_pointer|current_ip~10        ; |Instruction_pointer|current_ip~10        ; out              ;
+; |Instruction_pointer|current_ip~13        ; |Instruction_pointer|current_ip~13        ; out              ;
+; |Instruction_pointer|current_ip~14        ; |Instruction_pointer|current_ip~14        ; out              ;
+; |Instruction_pointer|current_ip~15        ; |Instruction_pointer|current_ip~15        ; out              ;
+; |Instruction_pointer|current_ip~16        ; |Instruction_pointer|current_ip~16        ; out              ;
+; |Instruction_pointer|current_ip~17        ; |Instruction_pointer|current_ip~17        ; out              ;
+; |Instruction_pointer|current_ip~18        ; |Instruction_pointer|current_ip~18        ; out              ;
+; |Instruction_pointer|current_ip~19        ; |Instruction_pointer|current_ip~19        ; out              ;
+; |Instruction_pointer|current_ip~20        ; |Instruction_pointer|current_ip~20        ; out              ;
+; |Instruction_pointer|current_ip~21        ; |Instruction_pointer|current_ip~21        ; out              ;
+; |Instruction_pointer|current_ip~22        ; |Instruction_pointer|current_ip~22        ; out              ;
+; |Instruction_pointer|current_ip~23        ; |Instruction_pointer|current_ip~23        ; out              ;
+; |Instruction_pointer|current_ip~26        ; |Instruction_pointer|current_ip~26        ; out              ;
+; |Instruction_pointer|current_ip~27        ; |Instruction_pointer|current_ip~27        ; out              ;
+; |Instruction_pointer|current_ip~28        ; |Instruction_pointer|current_ip~28        ; out              ;
+; |Instruction_pointer|current_ip~29        ; |Instruction_pointer|current_ip~29        ; out              ;
+; |Instruction_pointer|current_ip~30        ; |Instruction_pointer|current_ip~30        ; out              ;
+; |Instruction_pointer|current_ip~31        ; |Instruction_pointer|current_ip~31        ; out              ;
+; |Instruction_pointer|current_ip~32        ; |Instruction_pointer|current_ip~32        ; out              ;
+; |Instruction_pointer|current_ip~33        ; |Instruction_pointer|current_ip~33        ; out              ;
+; |Instruction_pointer|current_ip~34        ; |Instruction_pointer|current_ip~34        ; out              ;
+; |Instruction_pointer|current_ip~35        ; |Instruction_pointer|current_ip~35        ; out              ;
+; |Instruction_pointer|current_ip~36        ; |Instruction_pointer|current_ip~36        ; out              ;
+; |Instruction_pointer|current_ip~39        ; |Instruction_pointer|current_ip~39        ; out              ;
+; |Instruction_pointer|current_ip~40        ; |Instruction_pointer|current_ip~40        ; out              ;
+; |Instruction_pointer|current_ip~41        ; |Instruction_pointer|current_ip~41        ; out              ;
+; |Instruction_pointer|current_ip~42        ; |Instruction_pointer|current_ip~42        ; out              ;
+; |Instruction_pointer|current_ip~43        ; |Instruction_pointer|current_ip~43        ; out              ;
+; |Instruction_pointer|current_ip~44        ; |Instruction_pointer|current_ip~44        ; out              ;
+; |Instruction_pointer|current_ip~45        ; |Instruction_pointer|current_ip~45        ; out              ;
+; |Instruction_pointer|current_ip~46        ; |Instruction_pointer|current_ip~46        ; out              ;
+; |Instruction_pointer|current_ip~47        ; |Instruction_pointer|current_ip~47        ; out              ;
+; |Instruction_pointer|current_ip~48        ; |Instruction_pointer|current_ip~48        ; out              ;
+; |Instruction_pointer|current_ip~49        ; |Instruction_pointer|current_ip~49        ; out              ;
+; |Instruction_pointer|instruccion[12]~reg0 ; |Instruction_pointer|instruccion[12]~reg0 ; regout           ;
+; |Instruction_pointer|instruccion[11]~reg0 ; |Instruction_pointer|instruccion[11]~reg0 ; regout           ;
+; |Instruction_pointer|instruccion[10]~reg0 ; |Instruction_pointer|instruccion[10]~reg0 ; regout           ;
+; |Instruction_pointer|instruccion[9]~reg0  ; |Instruction_pointer|instruccion[9]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[8]~reg0  ; |Instruction_pointer|instruccion[8]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[7]~reg0  ; |Instruction_pointer|instruccion[7]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[6]~reg0  ; |Instruction_pointer|instruccion[6]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[5]~reg0  ; |Instruction_pointer|instruccion[5]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[4]~reg0  ; |Instruction_pointer|instruccion[4]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[3]~reg0  ; |Instruction_pointer|instruccion[3]~reg0  ; regout           ;
+; |Instruction_pointer|instruccion[2]~reg0  ; |Instruction_pointer|instruccion[2]~reg0  ; regout           ;
+; |Instruction_pointer|current_ip[2]        ; |Instruction_pointer|current_ip[2]        ; regout           ;
+; |Instruction_pointer|current_ip[3]        ; |Instruction_pointer|current_ip[3]        ; regout           ;
+; |Instruction_pointer|current_ip[4]        ; |Instruction_pointer|current_ip[4]        ; regout           ;
+; |Instruction_pointer|current_ip[5]        ; |Instruction_pointer|current_ip[5]        ; regout           ;
+; |Instruction_pointer|current_ip[6]        ; |Instruction_pointer|current_ip[6]        ; regout           ;
+; |Instruction_pointer|current_ip[7]        ; |Instruction_pointer|current_ip[7]        ; regout           ;
+; |Instruction_pointer|current_ip[8]        ; |Instruction_pointer|current_ip[8]        ; regout           ;
+; |Instruction_pointer|current_ip[9]        ; |Instruction_pointer|current_ip[9]        ; regout           ;
+; |Instruction_pointer|current_ip[10]       ; |Instruction_pointer|current_ip[10]       ; regout           ;
+; |Instruction_pointer|current_ip[11]       ; |Instruction_pointer|current_ip[11]       ; regout           ;
+; |Instruction_pointer|current_ip[12]       ; |Instruction_pointer|current_ip[12]       ; regout           ;
+; |Instruction_pointer|rst_ip               ; |Instruction_pointer|rst_ip               ; out              ;
+; |Instruction_pointer|cargar[0]            ; |Instruction_pointer|cargar[0]            ; out              ;
+; |Instruction_pointer|cargar[1]            ; |Instruction_pointer|cargar[1]            ; out              ;
+; |Instruction_pointer|cargar[2]            ; |Instruction_pointer|cargar[2]            ; out              ;
+; |Instruction_pointer|cargar[3]            ; |Instruction_pointer|cargar[3]            ; out              ;
+; |Instruction_pointer|cargar[4]            ; |Instruction_pointer|cargar[4]            ; out              ;
+; |Instruction_pointer|cargar[5]            ; |Instruction_pointer|cargar[5]            ; out              ;
+; |Instruction_pointer|cargar[6]            ; |Instruction_pointer|cargar[6]            ; out              ;
+; |Instruction_pointer|cargar[7]            ; |Instruction_pointer|cargar[7]            ; out              ;
+; |Instruction_pointer|cargar[8]            ; |Instruction_pointer|cargar[8]            ; out              ;
+; |Instruction_pointer|cargar[9]            ; |Instruction_pointer|cargar[9]            ; out              ;
+; |Instruction_pointer|cargar[10]           ; |Instruction_pointer|cargar[10]           ; out              ;
+; |Instruction_pointer|cargar[11]           ; |Instruction_pointer|cargar[11]           ; out              ;
+; |Instruction_pointer|cargar[12]           ; |Instruction_pointer|cargar[12]           ; out              ;
+; |Instruction_pointer|Add0~1               ; |Instruction_pointer|Add0~1               ; out0             ;
+; |Instruction_pointer|Add0~2               ; |Instruction_pointer|Add0~2               ; out0             ;
+; |Instruction_pointer|Add0~3               ; |Instruction_pointer|Add0~3               ; out0             ;
+; |Instruction_pointer|Add0~4               ; |Instruction_pointer|Add0~4               ; out0             ;
+; |Instruction_pointer|Add0~5               ; |Instruction_pointer|Add0~5               ; out0             ;
+; |Instruction_pointer|Add0~6               ; |Instruction_pointer|Add0~6               ; out0             ;
+; |Instruction_pointer|Add0~7               ; |Instruction_pointer|Add0~7               ; out0             ;
+; |Instruction_pointer|Add0~8               ; |Instruction_pointer|Add0~8               ; out0             ;
+; |Instruction_pointer|Add0~9               ; |Instruction_pointer|Add0~9               ; out0             ;
+; |Instruction_pointer|Add0~10              ; |Instruction_pointer|Add0~10              ; out0             ;
+; |Instruction_pointer|Add0~11              ; |Instruction_pointer|Add0~11              ; out0             ;
+; |Instruction_pointer|Add0~12              ; |Instruction_pointer|Add0~12              ; out0             ;
+; |Instruction_pointer|Add0~13              ; |Instruction_pointer|Add0~13              ; out0             ;
+; |Instruction_pointer|Add0~14              ; |Instruction_pointer|Add0~14              ; out0             ;
+; |Instruction_pointer|Add0~15              ; |Instruction_pointer|Add0~15              ; out0             ;
+; |Instruction_pointer|Add0~16              ; |Instruction_pointer|Add0~16              ; out0             ;
+; |Instruction_pointer|Add0~17              ; |Instruction_pointer|Add0~17              ; out0             ;
+; |Instruction_pointer|Add0~18              ; |Instruction_pointer|Add0~18              ; out0             ;
+; |Instruction_pointer|Add0~19              ; |Instruction_pointer|Add0~19              ; out0             ;
+; |Instruction_pointer|Add0~20              ; |Instruction_pointer|Add0~20              ; out0             ;
+; |Instruction_pointer|Add0~21              ; |Instruction_pointer|Add0~21              ; out0             ;
+; |Instruction_pointer|Add0~22              ; |Instruction_pointer|Add0~22              ; out0             ;
++-------------------------------------------+-------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon May 16 09:31:23 2016
+Info: Command: quartus_sim --simulation_results_format=VWF Instruction_pointer -c Instruction_pointer
+Info (324025): Using vector source file "C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Instruction pointer/Instruction_pointer.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|Instruction_pointer|current_ip[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[1]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[0]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[2]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[3]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[4]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[5]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[6]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[7]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[8]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[9]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[10]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[11]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|instruccion[12]~en"
+Warning (324036): Found clock-sensitive change during active clock edge at time 180.0 ns on register "|Instruction_pointer|current_ip[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 540.0 ns on register "|Instruction_pointer|current_ip[5]"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      23.27 %
+Info (328052): Number of transitions in simulation is 286
+Info (324045): Vector file Instruction_pointer.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 318 megabytes
+    Info: Processing ended: Mon May 16 09:31:23 2016
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

@@ -1,0 +1,619 @@
+Analysis & Synthesis report for Bit_Shifting
+Sun May 15 22:43:16 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Quinto_nivel"
+ 11. Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel"
+ 12. Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel"
+ 13. Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel"
+ 14. Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Primer_nivel"
+ 15. Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Quinto_nivel"
+ 16. Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel"
+ 17. Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Tercer_nivel"
+ 18. Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel"
+ 19. Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Primer_nivel"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun May 15 22:43:16 2016           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Bit_Shifting                                    ;
+; Top-level Entity Name              ; Bit_Shifting                                    ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 482                                             ;
+;     Total combinational functions  ; 482                                             ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 99                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C70F896C6       ;                    ;
+; Top-level entity name                                                      ; Bit_Shifting       ; Bit_Shifting       ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                       ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                                          ; Library ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; Bit_Shifting.vhd                 ; yes             ; User VHDL File        ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Barrel Shifter/Bit_Shifting.vhd           ;         ;
+; logic_shift_right.vhd            ; yes             ; Auto-Found VHDL File  ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Barrel Shifter/logic_shift_right.vhd      ;         ;
+; barrelshiftblock.vhd             ; yes             ; Auto-Found VHDL File  ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Barrel Shifter/barrelshiftblock.vhd       ;         ;
+; mux_2_1.vhd                      ; yes             ; Auto-Found VHDL File  ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Barrel Shifter/mux_2_1.vhd                ;         ;
+; logic_shift_left.vhd             ; yes             ; Auto-Found VHDL File  ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Barrel Shifter/logic_shift_left.vhd       ;         ;
+; arithmetic_shift_right.vhd       ; yes             ; Auto-Found VHDL File  ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Barrel Shifter/arithmetic_shift_right.vhd ;         ;
+; rotateright.vhd                  ; yes             ; Auto-Found VHDL File  ; C:/Users/sears/Dropbox/Cuarto Semestre/Arquitectura de computadoras/Diseños/Barrel Shifter/rotateright.vhd            ;         ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 482      ;
+;                                             ;          ;
+; Total combinational functions               ; 482      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 279      ;
+;     -- 3 input functions                    ; 189      ;
+;     -- <=2 input functions                  ; 14       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 482      ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 99       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; Shift[0] ;
+; Maximum fan-out                             ; 97       ;
+; Total fan-out                               ; 1743     ;
+; Average fan-out                             ; 3.00     ;
++---------------------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                            ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------+--------------+
+; |Bit_Shifting                          ; 482 (168)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 99   ; 0            ; |Bit_Shifting                                                                                  ; work         ;
+;    |Arithmetic_Shift_Right:ASR|        ; 19 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR                                                       ; work         ;
+;       |BarrelShiftBlock:Cuarto_nivel|  ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel                         ; work         ;
+;          |mux_2_1:\Generar:17:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:17:Mux ; work         ;
+;          |mux_2_1:\Generar:18:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:18:Mux ; work         ;
+;          |mux_2_1:\Generar:19:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:19:Mux ; work         ;
+;          |mux_2_1:\Generar:20:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:20:Mux ; work         ;
+;          |mux_2_1:\Generar:21:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:21:Mux ; work         ;
+;          |mux_2_1:\Generar:22:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:22:Mux ; work         ;
+;          |mux_2_1:\Generar:23:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:23:Mux ; work         ;
+;          |mux_2_1:\Generar:24:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:24:Mux ; work         ;
+;          |mux_2_1:\Generar:25:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:25:Mux ; work         ;
+;          |mux_2_1:\Generar:26:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:26:Mux ; work         ;
+;          |mux_2_1:\Generar:27:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:27:Mux ; work         ;
+;          |mux_2_1:\Generar:28:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:28:Mux ; work         ;
+;          |mux_2_1:\Generar:29:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:29:Mux ; work         ;
+;          |mux_2_1:\Generar:30:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:30:Mux ; work         ;
+;       |BarrelShiftBlock:Tercer_nivel|  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Tercer_nivel                         ; work         ;
+;          |mux_2_1:\Generar:25:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:25:Mux ; work         ;
+;          |mux_2_1:\Generar:26:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Arithmetic_Shift_Right:ASR|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:26:Mux ; work         ;
+;    |Logic_Shift_Left:LSL|              ; 112 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL                                                             ; work         ;
+;       |BarrelShiftBlock:Cuarto_nivel|  ; 21 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel                               ; work         ;
+;          |mux_2_1:\Generar:10:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:10:Mux       ; work         ;
+;          |mux_2_1:\Generar:11:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:11:Mux       ; work         ;
+;          |mux_2_1:\Generar:12:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:12:Mux       ; work         ;
+;          |mux_2_1:\Generar:13:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:13:Mux       ; work         ;
+;          |mux_2_1:\Generar:14:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:14:Mux       ; work         ;
+;          |mux_2_1:\Generar:15:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:15:Mux       ; work         ;
+;          |mux_2_1:\Generar:1:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:1:Mux        ; work         ;
+;          |mux_2_1:\Generar:2:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:2:Mux        ; work         ;
+;          |mux_2_1:\Generar:3:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:3:Mux        ; work         ;
+;          |mux_2_1:\Generar:4:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:4:Mux        ; work         ;
+;          |mux_2_1:\Generar:5:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:5:Mux        ; work         ;
+;          |mux_2_1:\Generar:6:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:6:Mux        ; work         ;
+;          |mux_2_1:\Generar:7:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:7:Mux        ; work         ;
+;          |mux_2_1:\Generar:8:Mux|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:8:Mux        ; work         ;
+;          |mux_2_1:\Generar:9:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:9:Mux        ; work         ;
+;       |BarrelShiftBlock:Primer_nivel|  ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Primer_nivel                               ; work         ;
+;          |mux_2_1:\Generar:1:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Primer_nivel|mux_2_1:\Generar:1:Mux        ; work         ;
+;          |mux_2_1:\Generar:26:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Primer_nivel|mux_2_1:\Generar:26:Mux       ; work         ;
+;          |mux_2_1:\Generar:27:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Primer_nivel|mux_2_1:\Generar:27:Mux       ; work         ;
+;          |mux_2_1:\Generar:28:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Primer_nivel|mux_2_1:\Generar:28:Mux       ; work         ;
+;          |mux_2_1:\Generar:29:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Primer_nivel|mux_2_1:\Generar:29:Mux       ; work         ;
+;       |BarrelShiftBlock:Quinto_nivel|  ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Quinto_nivel                               ; work         ;
+;          |mux_2_1:\Generar:16:Mux|     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Quinto_nivel|mux_2_1:\Generar:16:Mux       ; work         ;
+;          |mux_2_1:\Generar:30:Mux|     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Quinto_nivel|mux_2_1:\Generar:30:Mux       ; work         ;
+;          |mux_2_1:\Generar:31:Mux|     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Quinto_nivel|mux_2_1:\Generar:31:Mux       ; work         ;
+;       |BarrelShiftBlock:Segundo_nivel| ; 53 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel                              ; work         ;
+;          |mux_2_1:\Generar:10:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:10:Mux      ; work         ;
+;          |mux_2_1:\Generar:11:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:11:Mux      ; work         ;
+;          |mux_2_1:\Generar:12:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:12:Mux      ; work         ;
+;          |mux_2_1:\Generar:13:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:13:Mux      ; work         ;
+;          |mux_2_1:\Generar:14:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:14:Mux      ; work         ;
+;          |mux_2_1:\Generar:15:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:15:Mux      ; work         ;
+;          |mux_2_1:\Generar:16:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:16:Mux      ; work         ;
+;          |mux_2_1:\Generar:17:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:17:Mux      ; work         ;
+;          |mux_2_1:\Generar:18:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:18:Mux      ; work         ;
+;          |mux_2_1:\Generar:19:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:19:Mux      ; work         ;
+;          |mux_2_1:\Generar:20:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:20:Mux      ; work         ;
+;          |mux_2_1:\Generar:21:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:21:Mux      ; work         ;
+;          |mux_2_1:\Generar:22:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:22:Mux      ; work         ;
+;          |mux_2_1:\Generar:23:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:23:Mux      ; work         ;
+;          |mux_2_1:\Generar:24:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:24:Mux      ; work         ;
+;          |mux_2_1:\Generar:25:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:25:Mux      ; work         ;
+;          |mux_2_1:\Generar:26:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:26:Mux      ; work         ;
+;          |mux_2_1:\Generar:27:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:27:Mux      ; work         ;
+;          |mux_2_1:\Generar:2:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:2:Mux       ; work         ;
+;          |mux_2_1:\Generar:3:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:3:Mux       ; work         ;
+;          |mux_2_1:\Generar:4:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:4:Mux       ; work         ;
+;          |mux_2_1:\Generar:5:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:5:Mux       ; work         ;
+;          |mux_2_1:\Generar:6:Mux|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:6:Mux       ; work         ;
+;          |mux_2_1:\Generar:7:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:7:Mux       ; work         ;
+;          |mux_2_1:\Generar:8:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:8:Mux       ; work         ;
+;          |mux_2_1:\Generar:9:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:9:Mux       ; work         ;
+;       |BarrelShiftBlock:Tercer_nivel|  ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel                               ; work         ;
+;          |mux_2_1:\Generar:0:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:0:Mux        ; work         ;
+;          |mux_2_1:\Generar:10:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:10:Mux       ; work         ;
+;          |mux_2_1:\Generar:11:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:11:Mux       ; work         ;
+;          |mux_2_1:\Generar:12:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:12:Mux       ; work         ;
+;          |mux_2_1:\Generar:13:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:13:Mux       ; work         ;
+;          |mux_2_1:\Generar:14:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:14:Mux       ; work         ;
+;          |mux_2_1:\Generar:15:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:15:Mux       ; work         ;
+;          |mux_2_1:\Generar:16:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:16:Mux       ; work         ;
+;          |mux_2_1:\Generar:17:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:17:Mux       ; work         ;
+;          |mux_2_1:\Generar:18:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:18:Mux       ; work         ;
+;          |mux_2_1:\Generar:19:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:19:Mux       ; work         ;
+;          |mux_2_1:\Generar:20:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:20:Mux       ; work         ;
+;          |mux_2_1:\Generar:21:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:21:Mux       ; work         ;
+;          |mux_2_1:\Generar:22:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:22:Mux       ; work         ;
+;          |mux_2_1:\Generar:23:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:23:Mux       ; work         ;
+;          |mux_2_1:\Generar:4:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:4:Mux        ; work         ;
+;          |mux_2_1:\Generar:9:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:9:Mux        ; work         ;
+;    |Logic_Shift_Right:LSR|             ; 133 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR                                                            ; work         ;
+;       |BarrelShiftBlock:Cuarto_nivel|  ; 70 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel                              ; work         ;
+;          |mux_2_1:\Generar:0:Mux|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:0:Mux       ; work         ;
+;          |mux_2_1:\Generar:10:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:10:Mux      ; work         ;
+;          |mux_2_1:\Generar:11:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:11:Mux      ; work         ;
+;          |mux_2_1:\Generar:12:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:12:Mux      ; work         ;
+;          |mux_2_1:\Generar:13:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:13:Mux      ; work         ;
+;          |mux_2_1:\Generar:14:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:14:Mux      ; work         ;
+;          |mux_2_1:\Generar:15:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:15:Mux      ; work         ;
+;          |mux_2_1:\Generar:16:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:16:Mux      ; work         ;
+;          |mux_2_1:\Generar:17:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:17:Mux      ; work         ;
+;          |mux_2_1:\Generar:18:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:18:Mux      ; work         ;
+;          |mux_2_1:\Generar:19:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:19:Mux      ; work         ;
+;          |mux_2_1:\Generar:1:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:1:Mux       ; work         ;
+;          |mux_2_1:\Generar:20:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:20:Mux      ; work         ;
+;          |mux_2_1:\Generar:21:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:21:Mux      ; work         ;
+;          |mux_2_1:\Generar:22:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:22:Mux      ; work         ;
+;          |mux_2_1:\Generar:23:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:23:Mux      ; work         ;
+;          |mux_2_1:\Generar:24:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:24:Mux      ; work         ;
+;          |mux_2_1:\Generar:25:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:25:Mux      ; work         ;
+;          |mux_2_1:\Generar:26:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:26:Mux      ; work         ;
+;          |mux_2_1:\Generar:27:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:27:Mux      ; work         ;
+;          |mux_2_1:\Generar:28:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:28:Mux      ; work         ;
+;          |mux_2_1:\Generar:29:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:29:Mux      ; work         ;
+;          |mux_2_1:\Generar:2:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:2:Mux       ; work         ;
+;          |mux_2_1:\Generar:30:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:30:Mux      ; work         ;
+;          |mux_2_1:\Generar:31:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:31:Mux      ; work         ;
+;          |mux_2_1:\Generar:3:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:3:Mux       ; work         ;
+;          |mux_2_1:\Generar:4:Mux|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:4:Mux       ; work         ;
+;          |mux_2_1:\Generar:5:Mux|      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:5:Mux       ; work         ;
+;          |mux_2_1:\Generar:6:Mux|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:6:Mux       ; work         ;
+;          |mux_2_1:\Generar:7:Mux|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:7:Mux       ; work         ;
+;          |mux_2_1:\Generar:8:Mux|      ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:8:Mux       ; work         ;
+;          |mux_2_1:\Generar:9:Mux|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:9:Mux       ; work         ;
+;       |BarrelShiftBlock:Primer_nivel|  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Primer_nivel                              ; work         ;
+;          |mux_2_1:\Generar:29:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Primer_nivel|mux_2_1:\Generar:29:Mux      ; work         ;
+;          |mux_2_1:\Generar:30:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Primer_nivel|mux_2_1:\Generar:30:Mux      ; work         ;
+;       |BarrelShiftBlock:Quinto_nivel|  ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Quinto_nivel                              ; work         ;
+;          |mux_2_1:\Generar:0:Mux|      ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Quinto_nivel|mux_2_1:\Generar:0:Mux       ; work         ;
+;       |BarrelShiftBlock:Segundo_nivel| ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel                             ; work         ;
+;          |mux_2_1:\Generar:0:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:0:Mux      ; work         ;
+;          |mux_2_1:\Generar:10:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:10:Mux     ; work         ;
+;          |mux_2_1:\Generar:11:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:11:Mux     ; work         ;
+;          |mux_2_1:\Generar:12:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:12:Mux     ; work         ;
+;          |mux_2_1:\Generar:13:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:13:Mux     ; work         ;
+;          |mux_2_1:\Generar:14:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:14:Mux     ; work         ;
+;          |mux_2_1:\Generar:15:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:15:Mux     ; work         ;
+;          |mux_2_1:\Generar:16:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:16:Mux     ; work         ;
+;          |mux_2_1:\Generar:17:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:17:Mux     ; work         ;
+;          |mux_2_1:\Generar:18:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:18:Mux     ; work         ;
+;          |mux_2_1:\Generar:19:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:19:Mux     ; work         ;
+;          |mux_2_1:\Generar:1:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:1:Mux      ; work         ;
+;          |mux_2_1:\Generar:20:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:20:Mux     ; work         ;
+;          |mux_2_1:\Generar:21:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:21:Mux     ; work         ;
+;          |mux_2_1:\Generar:22:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:22:Mux     ; work         ;
+;          |mux_2_1:\Generar:23:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:23:Mux     ; work         ;
+;          |mux_2_1:\Generar:24:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:24:Mux     ; work         ;
+;          |mux_2_1:\Generar:25:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:25:Mux     ; work         ;
+;          |mux_2_1:\Generar:26:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:26:Mux     ; work         ;
+;          |mux_2_1:\Generar:27:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:27:Mux     ; work         ;
+;          |mux_2_1:\Generar:28:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:28:Mux     ; work         ;
+;          |mux_2_1:\Generar:29:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:29:Mux     ; work         ;
+;          |mux_2_1:\Generar:2:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:2:Mux      ; work         ;
+;          |mux_2_1:\Generar:3:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:3:Mux      ; work         ;
+;          |mux_2_1:\Generar:4:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:4:Mux      ; work         ;
+;          |mux_2_1:\Generar:5:Mux|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:5:Mux      ; work         ;
+;          |mux_2_1:\Generar:6:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:6:Mux      ; work         ;
+;          |mux_2_1:\Generar:7:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:7:Mux      ; work         ;
+;          |mux_2_1:\Generar:8:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:8:Mux      ; work         ;
+;          |mux_2_1:\Generar:9:Mux|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:9:Mux      ; work         ;
+;    |RotateRight:NotROR|                ; 50 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR                                                               ; work         ;
+;       |BarrelShiftBlock:Cuarto_nivel|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel                                 ; work         ;
+;          |mux_2_1:\Generar:17:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:17:Mux         ; work         ;
+;          |mux_2_1:\Generar:18:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:18:Mux         ; work         ;
+;          |mux_2_1:\Generar:19:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:19:Mux         ; work         ;
+;          |mux_2_1:\Generar:20:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:20:Mux         ; work         ;
+;          |mux_2_1:\Generar:21:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:21:Mux         ; work         ;
+;          |mux_2_1:\Generar:22:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:22:Mux         ; work         ;
+;          |mux_2_1:\Generar:23:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:23:Mux         ; work         ;
+;          |mux_2_1:\Generar:24:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:24:Mux         ; work         ;
+;          |mux_2_1:\Generar:25:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:25:Mux         ; work         ;
+;          |mux_2_1:\Generar:26:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:26:Mux         ; work         ;
+;          |mux_2_1:\Generar:27:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:27:Mux         ; work         ;
+;          |mux_2_1:\Generar:28:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:28:Mux         ; work         ;
+;          |mux_2_1:\Generar:29:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:29:Mux         ; work         ;
+;          |mux_2_1:\Generar:30:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:30:Mux         ; work         ;
+;          |mux_2_1:\Generar:31:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Cuarto_nivel|mux_2_1:\Generar:31:Mux         ; work         ;
+;       |BarrelShiftBlock:Segundo_nivel| ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Segundo_nivel                                ; work         ;
+;          |mux_2_1:\Generar:29:Mux|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:29:Mux        ; work         ;
+;          |mux_2_1:\Generar:30:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:30:Mux        ; work         ;
+;          |mux_2_1:\Generar:31:Mux|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Segundo_nivel|mux_2_1:\Generar:31:Mux        ; work         ;
+;       |BarrelShiftBlock:Tercer_nivel|  ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Tercer_nivel                                 ; work         ;
+;          |mux_2_1:\Generar:25:Mux|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Bit_Shifting|RotateRight:NotROR|BarrelShiftBlock:Tercer_nivel|mux_2_1:\Generar:25:Mux         ; work         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 9:1                ; 15 bits   ; 90 LEs        ; 60 LEs               ; 30 LEs                 ; No         ; |Bit_Shifting|Bytes_sal    ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |Bit_Shifting|Bytes_sal    ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |Bit_Shifting|Bytes_sal    ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 14 LEs               ; 2 LEs                  ; No         ; |Bit_Shifting|Bytes_sal    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Quinto_nivel" ;
++-----------------+-------+----------+-------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                   ;
++-----------------+-------+----------+-------------------------------------------+
+; entradab[15..0] ; Input ; Info     ; Stuck at GND                              ;
++-----------------+-------+----------+-------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Cuarto_nivel" ;
++----------------+-------+----------+--------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                    ;
++----------------+-------+----------+--------------------------------------------+
+; entradab[7..0] ; Input ; Info     ; Stuck at GND                               ;
++----------------+-------+----------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Tercer_nivel" ;
++----------------+-------+----------+--------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                    ;
++----------------+-------+----------+--------------------------------------------+
+; entradab[3..0] ; Input ; Info     ; Stuck at GND                               ;
++----------------+-------+----------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Segundo_nivel" ;
++----------------+-------+----------+---------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                     ;
++----------------+-------+----------+---------------------------------------------+
+; entradab[1..0] ; Input ; Info     ; Stuck at GND                                ;
++----------------+-------+----------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Left:LSL|BarrelShiftBlock:Primer_nivel" ;
++-------------+-------+----------+-----------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                       ;
++-------------+-------+----------+-----------------------------------------------+
+; entradab[0] ; Input ; Info     ; Stuck at GND                                  ;
++-------------+-------+----------+-----------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Quinto_nivel" ;
++------------------+-------+----------+-------------------------------------------+
+; Port             ; Type  ; Severity ; Details                                   ;
++------------------+-------+----------+-------------------------------------------+
+; entradab[31..16] ; Input ; Info     ; Stuck at GND                              ;
++------------------+-------+----------+-------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Cuarto_nivel" ;
++------------------+-------+----------+-------------------------------------------+
+; Port             ; Type  ; Severity ; Details                                   ;
++------------------+-------+----------+-------------------------------------------+
+; entradab[31..24] ; Input ; Info     ; Stuck at GND                              ;
++------------------+-------+----------+-------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Tercer_nivel" ;
++------------------+-------+----------+-------------------------------------------+
+; Port             ; Type  ; Severity ; Details                                   ;
++------------------+-------+----------+-------------------------------------------+
+; entradab[31..28] ; Input ; Info     ; Stuck at GND                              ;
++------------------+-------+----------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Segundo_nivel" ;
++------------------+-------+----------+--------------------------------------------+
+; Port             ; Type  ; Severity ; Details                                    ;
++------------------+-------+----------+--------------------------------------------+
+; entradab[31..30] ; Input ; Info     ; Stuck at GND                               ;
++------------------+-------+----------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Logic_Shift_Right:LSR|BarrelShiftBlock:Primer_nivel" ;
++--------------+-------+----------+-----------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                       ;
++--------------+-------+----------+-----------------------------------------------+
+; entradab[31] ; Input ; Info     ; Stuck at GND                                  ;
++--------------+-------+----------+-----------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun May 15 22:43:11 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Bit_Shifting -c Bit_Shifting
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file bit_shifting.vhd
+    Info (12022): Found design unit 1: Bit_Shifting-Behaivorial
+    Info (12023): Found entity 1: Bit_Shifting
+Info (12127): Elaborating entity "Bit_Shifting" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at Bit_Shifting.vhd(55): signal "LSR_sal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Bit_Shifting.vhd(57): signal "LSL_sal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Bit_Shifting.vhd(59): signal "ASR_sal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Bit_Shifting.vhd(61): signal "ROR_sal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Bit_Shifting.vhd(64): signal "Bytes_en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file logic_shift_right.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Logic_Shift_Right-Behaivorial
+    Info (12023): Found entity 1: Logic_Shift_Right
+Info (12128): Elaborating entity "Logic_Shift_Right" for hierarchy "Logic_Shift_Right:LSR"
+Warning (12125): Using design file barrelshiftblock.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: BarrelShiftBlock-Behavioral
+    Info (12023): Found entity 1: BarrelShiftBlock
+Info (12128): Elaborating entity "BarrelShiftBlock" for hierarchy "Logic_Shift_Right:LSR|BarrelShiftBlock:Primer_nivel"
+Warning (12125): Using design file mux_2_1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: mux_2_1-Behavioral
+    Info (12023): Found entity 1: mux_2_1
+Info (12128): Elaborating entity "Mux_2_1" for hierarchy "Logic_Shift_Right:LSR|BarrelShiftBlock:Primer_nivel|Mux_2_1:\Generar:0:Mux"
+Warning (10492): VHDL Process Statement warning at mux_2_1.vhd(16): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux_2_1.vhd(18): signal "b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at mux_2_1.vhd(13): inferring latch(es) for signal or variable "z", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "z" at mux_2_1.vhd(13)
+Warning (12125): Using design file logic_shift_left.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Logic_Shift_Left-Behaivorial
+    Info (12023): Found entity 1: Logic_Shift_Left
+Info (12128): Elaborating entity "Logic_Shift_Left" for hierarchy "Logic_Shift_Left:LSL"
+Warning (12125): Using design file arithmetic_shift_right.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Arithmetic_Shift_Right-Behaivorial
+    Info (12023): Found entity 1: Arithmetic_Shift_Right
+Info (12128): Elaborating entity "Arithmetic_Shift_Right" for hierarchy "Arithmetic_Shift_Right:ASR"
+Warning (12125): Using design file rotateright.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: RotateRight-Behaivorial
+    Info (12023): Found entity 1: RotateRight
+Info (12128): Elaborating entity "RotateRight" for hierarchy "RotateRight:NotROR"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 27 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Shift[5]"
+    Warning (15610): No output dependent on input pin "Shift[6]"
+    Warning (15610): No output dependent on input pin "Shift[7]"
+    Warning (15610): No output dependent on input pin "Shift[8]"
+    Warning (15610): No output dependent on input pin "Shift[9]"
+    Warning (15610): No output dependent on input pin "Shift[10]"
+    Warning (15610): No output dependent on input pin "Shift[11]"
+    Warning (15610): No output dependent on input pin "Shift[12]"
+    Warning (15610): No output dependent on input pin "Shift[13]"
+    Warning (15610): No output dependent on input pin "Shift[14]"
+    Warning (15610): No output dependent on input pin "Shift[15]"
+    Warning (15610): No output dependent on input pin "Shift[16]"
+    Warning (15610): No output dependent on input pin "Shift[17]"
+    Warning (15610): No output dependent on input pin "Shift[18]"
+    Warning (15610): No output dependent on input pin "Shift[19]"
+    Warning (15610): No output dependent on input pin "Shift[20]"
+    Warning (15610): No output dependent on input pin "Shift[21]"
+    Warning (15610): No output dependent on input pin "Shift[22]"
+    Warning (15610): No output dependent on input pin "Shift[23]"
+    Warning (15610): No output dependent on input pin "Shift[24]"
+    Warning (15610): No output dependent on input pin "Shift[25]"
+    Warning (15610): No output dependent on input pin "Shift[26]"
+    Warning (15610): No output dependent on input pin "Shift[27]"
+    Warning (15610): No output dependent on input pin "Shift[28]"
+    Warning (15610): No output dependent on input pin "Shift[29]"
+    Warning (15610): No output dependent on input pin "Shift[30]"
+    Warning (15610): No output dependent on input pin "Shift[31]"
+Info (21057): Implemented 581 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 67 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 482 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 501 megabytes
+    Info: Processing ended: Sun May 15 22:43:16 2016
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
+
+
