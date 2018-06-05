@@ -15,4 +15,5 @@ Using this design we develop a Bit Shifting block which was used for implementin
 ⋅⋅* Logic Shift Left.
 ⋅⋅* Rotate Right.
 
-Este bloque es utilizado para que la ALU pueda realizar estas operaciones con solo un ciclo de reloj. Como se mencionó este bloque es parte de la ALU.
+
+This block is used so that the ALU can perform these operations with only one clock cycle. As mentioned this block is part of the ALU.
